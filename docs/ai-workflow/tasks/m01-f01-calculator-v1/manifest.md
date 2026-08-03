@@ -4,8 +4,8 @@
 internal_id: m01-f01-calculator-v1
 human_name: 应届机试题-计算器业务需求包 v1.0
 workflow_version: v1.0
-status: independent_testing_complete
-stage: independent_audit_pending
+status: integration_regression_complete
+stage: local_integration_merge_pending
 branch: codex/m01-f01-calculator-v1
 base_commit: e2ce7e6
 allowed_paths:
@@ -19,6 +19,6 @@ reports:
   audit: 独立审计报告.md
   delivery: 交付报告.md
 next_session_prompt: >
-  $development-os 独立审计 应届机试题-计算器业务需求包 v1.0
+  $development-os 本地集成交付 应届机试题-计算器业务需求包 v1.0
   docs/ai-workflow/tasks/m01-f01-calculator-v1/
 ```
