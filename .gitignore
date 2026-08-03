@@ -8,6 +8,7 @@
 *.exp
 Makefile*
 .qmake.stash
+*.pro.user
 debug/
 release/
 build/

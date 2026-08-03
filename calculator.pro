@@ -1,7 +1,7 @@
 QT += widgets
 
 CONFIG += c++11
-QMAKE_CXXFLAGS += /utf-8
+msvc: QMAKE_CXXFLAGS += /utf-8
 TEMPLATE = app
 TARGET = WangChenyangCalculator
 
