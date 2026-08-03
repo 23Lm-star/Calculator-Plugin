@@ -14,6 +14,12 @@ allowed_paths:
   - tests/
   - resources/
   - docs/
+release:
+  approved_at: 2026-08-03
+  candidate_commit: 485648224c3bc1c66bc080cbec0eeb37f2e3cba2
+  target_branch: master
+  release_tag: v1.0.0
+  remote: git@github.com:23Lm-star/Calculator-Plugin.git
 reports:
   development: 开发报告.md
   testing: 独立测试报告.md
