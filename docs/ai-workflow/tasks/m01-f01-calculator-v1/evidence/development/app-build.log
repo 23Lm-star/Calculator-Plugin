@@ -1,0 +1,19 @@
+﻿Info: creating stash file C:\Users\???\Desktop\??????\build\app\.qmake.stash
+System.Management.Automation.RemoteException
+Microsoft (R) ����ά��ʵ�ù��� 14.44.35220.0 ��
+��Ȩ���� (C) Microsoft Corporation��  ��������Ȩ����
+System.Management.Automation.RemoteException
+	"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64\nmake.exe" -f Makefile.Release
+System.Management.Automation.RemoteException
+Microsoft (R) ����ά��ʵ�ù��� 14.44.35220.0 ��
+��Ȩ���� (C) Microsoft Corporation��  ��������Ȩ����
+System.Management.Automation.RemoteException
+	cl -c -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding /utf-8 -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -EHsc -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG -I..\..\..\?????? -I. -I..\..\src -IC:\ProgramData\Anaconda31\Library\include\qt -IC:\ProgramData\Anaconda31\Library\include\qt\QtWidgets -IC:\ProgramData\Anaconda31\Library\include\qt\QtGui -IC:\ProgramData\Anaconda31\Library\include\qt\QtANGLE -IC:\ProgramData\Anaconda31\Library\include\qt\QtCore -Irelease -IC:\ProgramData\Anaconda31\Library\mkspecs\win32-msvc -Forelease\ @C:\Users\������\AppData\Local\Temp\nmF566.tmp
+main.cpp
+	cl -c -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding /utf-8 -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -EHsc -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG -I..\..\..\?????? -I. -I..\..\src -IC:\ProgramData\Anaconda31\Library\include\qt -IC:\ProgramData\Anaconda31\Library\include\qt\QtWidgets -IC:\ProgramData\Anaconda31\Library\include\qt\QtGui -IC:\ProgramData\Anaconda31\Library\include\qt\QtANGLE -IC:\ProgramData\Anaconda31\Library\include\qt\QtCore -Irelease -IC:\ProgramData\Anaconda31\Library\mkspecs\win32-msvc -Forelease\ @C:\Users\������\AppData\Local\Temp\nmF8B3.tmp
+CalculatorEngine.cpp
+	cl -c -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding /utf-8 -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -EHsc -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG -I..\..\..\?????? -I. -I..\..\src -IC:\ProgramData\Anaconda31\Library\include\qt -IC:\ProgramData\Anaconda31\Library\include\qt\QtWidgets -IC:\ProgramData\Anaconda31\Library\include\qt\QtGui -IC:\ProgramData\Anaconda31\Library\include\qt\QtANGLE -IC:\ProgramData\Anaconda31\Library\include\qt\QtCore -Irelease -IC:\ProgramData\Anaconda31\Library\mkspecs\win32-msvc -Forelease\ @C:\Users\������\AppData\Local\Temp\nmF941.tmp
+CalculatorUI.cpp
+	cl -c -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding /utf-8 -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -EHsc -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG -I..\..\..\?????? -I. -I..\..\src -IC:\ProgramData\Anaconda31\Library\include\qt -IC:\ProgramData\Anaconda31\Library\include\qt\QtWidgets -IC:\ProgramData\Anaconda31\Library\include\qt\QtGui -IC:\ProgramData\Anaconda31\Library\include\qt\QtANGLE -IC:\ProgramData\Anaconda31\Library\include\qt\QtCore -Irelease -IC:\ProgramData\Anaconda31\Library\mkspecs\win32-msvc -Forelease\ @C:\Users\������\AppData\Local\Temp\nmFC8E.tmp
+CalculatorController.cpp
+	link /NOLOGO /DYNAMICBASE /NXCOMPAT /INCREMENTAL:NO /SUBSYSTEM:WINDOWS "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" /MANIFEST:embed /OUT:release\WangChenyangCalculator.exe @C:\Users\������\AppData\Local\Temp\nmFF7D.tmp

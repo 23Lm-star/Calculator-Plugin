@@ -1,0 +1,44 @@
+﻿Info: creating stash file C:\Users\???\Desktop\??????\tests\engine\.qmake.stash
+System.Management.Automation.RemoteException
+Microsoft (R) ����ά��ʵ�ù��� 14.44.35220.0 ��
+��Ȩ���� (C) Microsoft Corporation��  ��������Ȩ����
+System.Management.Automation.RemoteException
+	"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64\nmake.exe" -f Makefile.Release
+System.Management.Automation.RemoteException
+Microsoft (R) ����ά��ʵ�ù��� 14.44.35220.0 ��
+��Ȩ���� (C) Microsoft Corporation��  ��������Ȩ����
+System.Management.Automation.RemoteException
+	cl -c -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -EHsc -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DNDEBUG -I. -I..\..\src -IC:\ProgramData\Anaconda31\Library\mkspecs\win32-msvc -Forelease\ @C:\Users\������\AppData\Local\Temp\nm6FF5.tmp
+main.cpp
+	cl -c -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -EHsc -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DNDEBUG -I. -I..\..\src -IC:\ProgramData\Anaconda31\Library\mkspecs\win32-msvc -Forelease\ @C:\Users\������\AppData\Local\Temp\nm71EA.tmp
+CalculatorEngine.cpp
+	link /NOLOGO /DYNAMICBASE /NXCOMPAT /INCREMENTAL:NO /SUBSYSTEM:CONSOLE "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" /MANIFEST:embed /OUT:release\engine_tests.exe @C:\Users\������\AppData\Local\Temp\nm7249.tmp
+Microsoft (R) COFF/PE Dumper Version 14.44.35220.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file release\engine_tests.exe
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    MSVCP140.dll
+    KERNEL32.dll
+    VCRUNTIME140.dll
+    VCRUNTIME140_1.dll
+    api-ms-win-crt-string-l1-1-0.dll
+    api-ms-win-crt-runtime-l1-1-0.dll
+    api-ms-win-crt-math-l1-1-0.dll
+    api-ms-win-crt-stdio-l1-1-0.dll
+    api-ms-win-crt-locale-l1-1-0.dll
+    api-ms-win-crt-heap-l1-1-0.dll
+
+  Summary
+
+        1000 .data
+        1000 .pdata
+        2000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        1000 .text
