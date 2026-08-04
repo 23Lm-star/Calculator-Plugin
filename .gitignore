@@ -12,3 +12,5 @@ Makefile*
 debug/
 release/
 build/
+docs/
+王晨扬的计算器/
