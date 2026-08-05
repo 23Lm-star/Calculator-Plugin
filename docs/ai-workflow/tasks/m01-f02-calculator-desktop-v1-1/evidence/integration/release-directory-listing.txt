@@ -1,0 +1,44 @@
+﻿
+Name                                  Length LastWriteTime     
+----                                  ------ -------------     
+calculator.ini                           245 2026/8/5 19:43:02 
+calculator.ini.ui-test-backup            152 2026/8/5 15:55:40 
+CalculatorController.obj               34377 2026/8/5 19:45:06 
+CalculatorEngine.obj                   35244 2026/8/5 15:48:56 
+CalculatorUI.obj                      140278 2026/8/5 19:16:54 
+ConfigManager.obj                      34976 2026/8/5 19:45:05 
+D3Dcompiler_47.dll                   4669440 2026/7/29 11:58:12
+iconengines                                  2026/8/5 15:50:10 
+icudt58.dll                         26216448 2017/11/17 6:58:46
+icuin58.dll                          2713088 2017/11/17 6:58:43
+icuuc58.dll                          1905664 2017/11/17 6:58:41
+imageformats                                 2026/8/5 15:50:10 
+libEGL.dll                             15360 2018/4/25 18:56:44
+libGLESV2.dll                        2521600 2018/4/25 18:56:41
+log                                          2026/8/5 15:55:30 
+main.obj                                6228 2026/8/5 19:25:20 
+moc_CalculatorController.cpp            5180 2026/8/5 16:00:11 
+moc_CalculatorController.obj            5621 2026/8/5 16:00:15 
+moc_CalculatorUI.cpp                    8353 2026/8/5 19:16:51 
+moc_CalculatorUI.obj                    9126 2026/8/5 19:16:55 
+moc_predefs.h                            218 2026/8/5 15:48:50 
+MSVCP140.dll                          557728 2026/6/20 10:49:39
+opengl32sw.dll                      20923392 2016/6/14 21:00:30
+platforms                                    2026/8/5 15:50:10 
+qrc_resources.cpp                       5552 2026/8/5 15:48:50 
+qrc_resources.obj                       4696 2026/8/5 15:48:59 
+Qt5Core.dll                          5239808 2026/8/5 19:16:56 
+Qt5Gui.dll                           5941248 2018/4/25 18:58:20
+Qt5Svg.dll                            328192 2018/4/25 19:00:29
+Qt5Widgets.dll                       5538816 2018/4/25 18:59:27
+translations                                 2026/8/5 15:50:13 
+vc_redist.x64.exe                   25635768 2026/6/20 10:49:40
+VCRUNTIME140.dll                      124544 2026/6/20 10:49:39
+VCRUNTIME140_1.dll                     49792 2026/6/20 10:49:39
+WangChenyangCalculator.exe            118272 2026/8/5 19:45:06 
+WangChenyangCalculator_resource.res    41832 2026/8/5 15:48:53 
+
+
+
+required_missing=
+[exit_code] 0
