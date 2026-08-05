@@ -6,14 +6,15 @@
 
 class CalculatorEngine;
 class CalculatorUI;
+class ConfigManager;
 
 class CalculatorController : public QObject
 {
     Q_OBJECT
 
 public:
-    CalculatorController(CalculatorEngine &engine, CalculatorUI &ui);
-    void initialize();
+    CalculatorController(CalculatorEngine &engine, ConfigManager &config, CalculatorUI &ui);
+    bool initialize();
 
 private slots:
     void appendToken(const QString &token);
@@ -21,6 +22,8 @@ private slots:
     void backspace();
     void evaluate();
     void rejectInput(const QString &input);
+    void selectTheme(const QString &themeId);
+    void selectBackgroundImage(const QString &path);
 
 private:
     bool isOperator(const QString &token) const;
@@ -28,6 +31,7 @@ private:
     void refreshExpression();
 
     CalculatorEngine &engine_;
+    ConfigManager &config_;
     CalculatorUI &ui_;
     QString expression_;
     double lastResult_;

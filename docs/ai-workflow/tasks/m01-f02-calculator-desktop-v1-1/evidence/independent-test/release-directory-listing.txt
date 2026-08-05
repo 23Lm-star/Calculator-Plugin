@@ -1,0 +1,55 @@
+
+FullName                                                                   Length
+--------                                                                   ------
+C:\tmp\codex-m01-f02-independent-test\release\D3Dcompiler_47.dll          4669440
+C:\tmp\codex-m01-f02-independent-test\release\iconengines                        
+C:\tmp\codex-m01-f02-independent-test\release\iconengines\qsvgicon.dll      37888
+C:\tmp\codex-m01-f02-independent-test\release\icudt58.dll                26216448
+C:\tmp\codex-m01-f02-independent-test\release\icuin58.dll                 2713088
+C:\tmp\codex-m01-f02-independent-test\release\icuuc58.dll                 1905664
+C:\tmp\codex-m01-f02-independent-test\release\imageformats                       
+C:\tmp\codex-m01-f02-independent-test\release\imageformats\qgif.dll         32256
+C:\tmp\codex-m01-f02-independent-test\release\imageformats\qicns.dll        39936
+C:\tmp\codex-m01-f02-independent-test\release\imageformats\qico.dll         34304
+C:\tmp\codex-m01-f02-independent-test\release\imageformats\qjpeg.dll        39424
+C:\tmp\codex-m01-f02-independent-test\release\imageformats\qsvg.dll         26112
+C:\tmp\codex-m01-f02-independent-test\release\imageformats\qtga.dll         25600
+C:\tmp\codex-m01-f02-independent-test\release\imageformats\qtiff.dll       371712
+C:\tmp\codex-m01-f02-independent-test\release\imageformats\qwbmp.dll        24064
+C:\tmp\codex-m01-f02-independent-test\release\imageformats\qwebp.dll       481792
+C:\tmp\codex-m01-f02-independent-test\release\libEGL.dll                    15360
+C:\tmp\codex-m01-f02-independent-test\release\libGLESV2.dll               2521600
+C:\tmp\codex-m01-f02-independent-test\release\opengl32sw.dll             20923392
+C:\tmp\codex-m01-f02-independent-test\release\platforms                          
+C:\tmp\codex-m01-f02-independent-test\release\platforms\qwindows.dll      1257984
+C:\tmp\codex-m01-f02-independent-test\release\Qt5Core.dll                 5239808
+C:\tmp\codex-m01-f02-independent-test\release\Qt5Gui.dll                  5941248
+C:\tmp\codex-m01-f02-independent-test\release\Qt5Svg.dll                   328192
+C:\tmp\codex-m01-f02-independent-test\release\Qt5Widgets.dll              5538816
+C:\tmp\codex-m01-f02-independent-test\release\translations                       
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_ar.qm        160010
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_bg.qm        165327
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_ca.qm        179209
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_cs.qm        174691
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_da.qm        169653
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_de.qm        187985
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_en.qm            23
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_es.qm        165160
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_fi.qm        175523
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_fr.qm        166157
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_gd.qm        189570
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_he.qm        138680
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_hu.qm        160484
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_it.qm        161129
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_ja.qm        129904
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_ko.qm        131255
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_lv.qm        153598
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_pl.qm        162972
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_ru.qm        157842
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_sk.qm        125753
+C:\tmp\codex-m01-f02-independent-test\release\translations\qt_uk.qm        158231
+C:\tmp\codex-m01-f02-independent-test\release\vc_redist.x64.exe          25635768
+C:\tmp\codex-m01-f02-independent-test\release\WangChenyangCalculator.exe   113152
+
+
+
