@@ -5,8 +5,8 @@ internal_id: m01-f03-release-delivery-v1
 human_name: 发布交付物生成与部署脚本化
 workflow_version: v1.1
 task_card_version: v1.1
-status: repair_test_audit_passed
-stage: awaiting_local_integration
+status: local_integration_complete
+stage: local_delivery_complete
 branch: codex/release-delivery-v1.0
 base_branch: integration
 base_commit: 1ce0e9a
@@ -29,8 +29,14 @@ repair_cycles:
   - findings: P1 ZIP whitelist and path leakage; P2 parser evidence coverage
     result: passed independent test and audit on 2026-08-07
 approval_decisions: []
+integration:
+  candidate_feature_commit: d45411457b7e88896d170d625c23e6e3d977ac5e
+  target_commit: 1ce0e9a46700fb80e0389457c2dc0452864d0003
+  local_merge_commit: ef44751
+  regression_result: passed
+  report: integration-report.md
 known_limitations:
   - 未执行真实 VC 运行库安装，以避免在开发机上修改系统运行库；使用受控的进程启动模拟覆盖退出码分支。
 next_session_prompt: |
-  $development-os 集成 发布交付物生成与部署脚本化 docs/ai-workflow/tasks/m01-f03-release-delivery-v1/
+  Local integration is complete. Do not merge main, push, tag, or deploy without explicit approval.
 ```
