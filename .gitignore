@@ -14,3 +14,12 @@ release/
 build/
 docs/
 王晨扬的计算器/
+
+# Track reproducible release tooling, but keep generated release binaries ignored.
+!scripts/
+!scripts/release/
+!scripts/release/*.ps1
+!scripts/release/*.cmd
+!release/
+!release/README.md
+artifacts/

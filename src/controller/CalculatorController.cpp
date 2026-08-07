@@ -1,21 +1,66 @@
 #include "CalculatorController.h"
 
+#include "config/ConfigManager.h"
 #include "model/CalculatorEngine.h"
 #include "view/CalculatorUI.h"
 
-CalculatorController::CalculatorController(CalculatorEngine &engine, CalculatorUI &ui)
-    : engine_(engine), ui_(ui), lastResult_(0.0), hasResult_(false)
+CalculatorController::CalculatorController(CalculatorEngine &engine, ConfigManager &config, CalculatorUI &ui)
+    : engine_(engine), config_(config), ui_(ui), lastResult_(0.0), hasResult_(false)
 {
     connect(&ui_, &CalculatorUI::tokenRequested, this, &CalculatorController::appendToken);
     connect(&ui_, &CalculatorUI::clearRequested, this, &CalculatorController::clear);
     connect(&ui_, &CalculatorUI::backspaceRequested, this, &CalculatorController::backspace);
     connect(&ui_, &CalculatorUI::evaluateRequested, this, &CalculatorController::evaluate);
     connect(&ui_, &CalculatorUI::invalidInputRequested, this, &CalculatorController::rejectInput);
+    connect(&ui_, &CalculatorUI::themeRequested, this, &CalculatorController::selectTheme);
+    connect(&ui_, &CalculatorUI::backgroundImageRequested, this, &CalculatorController::selectBackgroundImage);
 }
 
-void CalculatorController::initialize()
+bool CalculatorController::initialize()
 {
+    QString userName = config_.userName();
+    if (userName.isEmpty()) {
+        userName = ui_.requestUserName();
+    }
+    if (userName.isEmpty()) {
+        return false;
+    }
+    config_.setUserName(userName);
+    ui_.setUserName(userName);
+    const QString themeId = config_.themeId();
+    const QString backgroundImage = themeId == QStringLiteral("custom")
+        ? config_.customBackgroundImage() : QString();
+    ui_.setTheme(themeId, backgroundImage);
     clear();
+    return true;
+}
+
+void CalculatorController::selectTheme(const QString &themeId)
+{
+    if (themeId == QStringLiteral("custom")) {
+        const QString backgroundImage = config_.customBackgroundImage();
+        if (backgroundImage.isEmpty()) {
+            return;
+        }
+        config_.setThemeId(themeId);
+        config_.setBackgroundImage(backgroundImage);
+        ui_.setTheme(themeId, backgroundImage);
+        return;
+    }
+    config_.setThemeId(themeId);
+    config_.setBackgroundImage(QStringLiteral("preset:") + themeId);
+    ui_.setTheme(themeId, QString());
+}
+
+void CalculatorController::selectBackgroundImage(const QString &path)
+{
+    if (path.isEmpty()) {
+        return;
+    }
+    config_.setThemeId(QStringLiteral("custom"));
+    config_.setCustomBackgroundImage(path);
+    config_.setBackgroundImage(path);
+    ui_.setTheme(QStringLiteral("custom"), path);
 }
 
 void CalculatorController::appendToken(const QString &token)
