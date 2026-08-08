@@ -1,0 +1,51 @@
+﻿ASSERT Parser Install-Calculator.ps1: PASS - parse errors: 0
+ASSERT Parser Package-Release.ps1: PASS - parse errors: 0
+ASSERT Parser Create-DesktopShortcut.ps1: PASS - parse errors: 0
+ASSERT OutputDirectory payload exists: PASS - C:\tmp\release-v1.1.0-master\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260808-contract\packages\Payload.zip
+ASSERT Payload entries are safe: PASS - no absolute, UNC, extended, or traversal entries
+ASSERT Payload member Qt5Core.dll: PASS - present
+ASSERT Payload member Qt5Gui.dll: PASS - present
+ASSERT Payload member Qt5Widgets.dll: PASS - present
+ASSERT Payload member platforms/qwindows.dll: PASS - present
+ASSERT Payload member MSVCP140.dll: PASS - present
+ASSERT Payload member VCRUNTIME140.dll: PASS - present
+ASSERT Payload member VCRUNTIME140_1.dll: PASS - present
+ASSERT Payload member vc_redist.x64.exe: PASS - present
+ASSERT Payload member Create-DesktopShortcut.ps1: PASS - present
+ASSERT Payload member README.md: PASS - present
+ASSERT Unapproved plugin is excluded: PASS - platforms/unexpected.dll
+ASSERT Unapproved translation is excluded: PASS - translations/private.txt
+ASSERT Unsafe text rejected C:\\temp\\secret: PASS - Unsafe path found in package text: unsafe-529762dffbe44cab9b37cddc30067ad3.md
+ASSERT Unsafe text rejected \\\\server\\share: PASS - Unsafe path found in package text: unsafe-a533b995467c478592d9abb7c5a42c62.md
+ASSERT Unsafe text rejected ..\\escape: PASS - Unsafe path found in package text: unsafe-2f5446e551b74c6fa7f0a8cb7c417c11.md
+ASSERT Controlled copy omits build: PASS - build omitted
+ASSERT Controlled copy omits artifacts/release: PASS - artifacts/release omitted
+ASSERT VC 0 invocation count: PASS - calls: 1
+ASSERT VC 0 arguments: PASS - arguments: /install /quiet /norestart
+ASSERT VC 0 wait/pass-through: PASS - Wait=True; PassThru=True
+ASSERT VC 0 copied executable: PASS - C:\tmp\release-v1.1.0-master\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260808-contract\install-0-no-launch\installed-app
+ASSERT VC 0 copied runtime: PASS - C:\tmp\release-v1.1.0-master\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260808-contract\install-0-no-launch\installed-app
+ASSERT VC 0 shortcut created: PASS - C:\Users\王晨扬\Desktop\M01F03-0.lnk
+ASSERT VC 0 NoLaunch suppresses application: PASS - application Start-Process calls: 0
+ASSERT VC 0 succeeds: PASS - no terminating error
+ASSERT VC 3010 invocation count: PASS - calls: 1
+ASSERT VC 3010 arguments: PASS - arguments: /install /quiet /norestart
+ASSERT VC 3010 wait/pass-through: PASS - Wait=True; PassThru=True
+ASSERT VC 3010 copied executable: PASS - C:\tmp\release-v1.1.0-master\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260808-contract\install-3010-no-launch\installed-app
+ASSERT VC 3010 copied runtime: PASS - C:\tmp\release-v1.1.0-master\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260808-contract\install-3010-no-launch\installed-app
+ASSERT VC 3010 shortcut created: PASS - C:\Users\王晨扬\Desktop\M01F03-3010.lnk
+ASSERT VC 3010 NoLaunch suppresses application: PASS - application Start-Process calls: 0
+ASSERT VC 3010 succeeds: PASS - no terminating error
+ASSERT VC 3010 restart message: PASS - Desktop shortcut created: C:\Users\王晨扬\Desktop\M01F03-3010.lnk
+Microsoft Visual C++ x64 runtime installation completed; restart is required.
+Installed to: C:\tmp\release-v1.1.0-master\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260808-contract\install-3010-no-launch\installed-app
+ASSERT VC 1603 invocation count: PASS - calls: 1
+ASSERT VC 1603 arguments: PASS - arguments: /install /quiet /norestart
+ASSERT VC 1603 wait/pass-through: PASS - Wait=True; PassThru=True
+ASSERT VC 1603 copied executable: PASS - C:\tmp\release-v1.1.0-master\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260808-contract\install-1603-no-launch\installed-app
+ASSERT VC 1603 copied runtime: PASS - C:\tmp\release-v1.1.0-master\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260808-contract\install-1603-no-launch\installed-app
+ASSERT VC 1603 shortcut created: PASS - C:\Users\王晨扬\Desktop\M01F03-1603.lnk
+ASSERT VC 1603 NoLaunch suppresses application: PASS - application Start-Process calls: 0
+ASSERT VC 1603 fails: PASS - Microsoft Visual C++ x64 runtime installation failed with exit code 1603. Run this file manually: C:\tmp\release-v1.1.0-master\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260808-contract\install-1603-no-launch\installed-app\vc_redist.x64.exe
+ASSERT VC 1603 failure message: PASS - Microsoft Visual C++ x64 runtime installation failed with exit code 1603. Run this file manually: C:\tmp\release-v1.1.0-master\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260808-contract\install-1603-no-launch\installed-app\vc_redist.x64.exe
+RESULT PASS

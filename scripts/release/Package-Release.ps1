@@ -2,6 +2,7 @@
 param(
     [string]$ReleaseDirectory,
     [string]$Version = '1.1.0',
+    [string]$PayloadPath,
     [string]$OutputDirectory,
     [string]$ReadmePath
 )
@@ -13,20 +14,23 @@ $projectRoot = (Resolve-Path (Join-Path $scriptRoot '..\..')).Path
 if ([string]::IsNullOrWhiteSpace($ReleaseDirectory)) {
     $ReleaseDirectory = Join-Path $projectRoot 'build\v1.1-app\release'
 }
-if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
-    $OutputDirectory = Join-Path $projectRoot 'artifacts\release'
+if ([string]::IsNullOrWhiteSpace($PayloadPath)) {
+    $PayloadPath = if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
+        Join-Path $projectRoot 'release\Payload.zip'
+    }
+    else {
+        Join-Path $OutputDirectory 'Payload.zip'
+    }
 }
-$releasePath = (Resolve-Path $ReleaseDirectory).Path
-$outputPath = [IO.Path]::GetFullPath($OutputDirectory)
-$defaultReadmePath = Join-Path $projectRoot 'release\README.md'
 if ([string]::IsNullOrWhiteSpace($ReadmePath)) {
-    $ReadmePath = $defaultReadmePath
+    $ReadmePath = Join-Path $projectRoot 'release\README.md'
 }
-$ReadmePath = (Resolve-Path $ReadmePath).Path
+
+$releasePath = (Resolve-Path $ReleaseDirectory).Path
+$payloadPath = [IO.Path]::GetFullPath($PayloadPath)
+$readmePath = (Resolve-Path $ReadmePath).Path
+$payloadDirectory = Split-Path -Parent $payloadPath
 $packageName = "$applicationName-$Version"
-$stagingPath = Join-Path $outputPath $packageName
-$zipPath = Join-Path $outputPath ($packageName + '.zip')
-$installerPackagePath = Join-Path $outputPath ($packageName + '-Installer.zip')
 
 if ($Version -notmatch '^\d+\.\d+\.\d+([-.][0-9A-Za-z.]+)?$') {
     throw 'Version must use a portable numeric version such as 1.1.0.'
@@ -72,15 +76,15 @@ function Assert-SafeArchive([string]$ArchivePath, [string[]]$AllowedEntries) {
     }
 }
 
+$runtimeNames = @(
+    "$applicationName.exe", 'Qt5Core.dll', 'Qt5Gui.dll', 'Qt5Svg.dll', 'Qt5Widgets.dll',
+    'D3Dcompiler_47.dll', 'icudt58.dll', 'icuin58.dll', 'icuuc58.dll', 'libEGL.dll',
+    'libGLESV2.dll', 'MSVCP140.dll', 'VCRUNTIME140.dll', 'VCRUNTIME140_1.dll',
+    'opengl32sw.dll', 'vc_redist.x64.exe'
+)
 $requiredFiles = @(
-    "$applicationName.exe",
-    'Qt5Core.dll',
-    'Qt5Gui.dll',
-    'Qt5Widgets.dll',
-    'MSVCP140.dll',
-    'VCRUNTIME140.dll',
-    'VCRUNTIME140_1.dll',
-    'vc_redist.x64.exe',
+    "$applicationName.exe", 'Qt5Core.dll', 'Qt5Gui.dll', 'Qt5Widgets.dll',
+    'MSVCP140.dll', 'VCRUNTIME140.dll', 'VCRUNTIME140_1.dll', 'vc_redist.x64.exe',
     'platforms\qwindows.dll'
 )
 foreach ($relativePath in $requiredFiles) {
@@ -89,56 +93,42 @@ foreach ($relativePath in $requiredFiles) {
     }
 }
 
-New-Item -ItemType Directory -Force -Path $outputPath | Out-Null
-Remove-Item -LiteralPath $stagingPath -Recurse -Force -ErrorAction SilentlyContinue
-Remove-Item -LiteralPath $zipPath -Force -ErrorAction SilentlyContinue
-Remove-Item -LiteralPath $installerPackagePath -Force -ErrorAction SilentlyContinue
+$temporaryRoot = Join-Path $env:TEMP ('WangChenyangCalculator-Payload-' + [guid]::NewGuid().ToString('N'))
+$stagingPath = Join-Path $temporaryRoot $packageName
+$temporaryPayloadPath = Join-Path $temporaryRoot 'Payload.zip'
+New-Item -ItemType Directory -Force -Path $payloadDirectory | Out-Null
 New-Item -ItemType Directory -Force -Path $stagingPath | Out-Null
+try {
+    $packageFiles = [System.Collections.Generic.List[string]]::new()
+    foreach ($runtimeName in $runtimeNames) {
+        $sourcePath = Join-Path $releasePath $runtimeName
+        if (Test-Path -LiteralPath $sourcePath -PathType Leaf) {
+            Copy-Item -LiteralPath $sourcePath -Destination $stagingPath -Force
+            $packageFiles.Add($runtimeName)
+        }
+    }
 
-$runtimeNames = @(
-    "$applicationName.exe", 'Qt5Core.dll', 'Qt5Gui.dll', 'Qt5Svg.dll', 'Qt5Widgets.dll',
-    'D3Dcompiler_47.dll', 'icudt58.dll', 'icuin58.dll', 'icuuc58.dll', 'libEGL.dll',
-    'libGLESV2.dll', 'MSVCP140.dll', 'VCRUNTIME140.dll', 'VCRUNTIME140_1.dll',
-    'opengl32sw.dll', 'vc_redist.x64.exe'
-)
-$packageFiles = [System.Collections.Generic.List[string]]::new()
-foreach ($runtimeName in $runtimeNames) {
-    $sourcePath = Join-Path $releasePath $runtimeName
-    if (Test-Path -LiteralPath $sourcePath -PathType Leaf) {
-        Copy-Item -LiteralPath $sourcePath -Destination $stagingPath -Force
-        $packageFiles.Add($runtimeName)
+    $platformDirectory = Join-Path $stagingPath 'platforms'
+    New-Item -ItemType Directory -Force -Path $platformDirectory | Out-Null
+    Copy-Item -LiteralPath (Join-Path $releasePath 'platforms\qwindows.dll') -Destination $platformDirectory -Force
+    $packageFiles.Add('platforms\qwindows.dll')
+    Copy-Item -LiteralPath (Join-Path $scriptRoot 'Create-DesktopShortcut.ps1') -Destination $stagingPath -Force
+    Copy-Item -LiteralPath $readmePath -Destination $stagingPath -Force
+    $packageFiles.Add('Create-DesktopShortcut.ps1')
+    $packageFiles.Add('README.md')
+
+    Assert-SafePackageText $stagingPath
+    Compress-Archive -LiteralPath $stagingPath -DestinationPath $temporaryPayloadPath -CompressionLevel Optimal -Force
+    if (-not (Test-Path -LiteralPath $temporaryPayloadPath -PathType Leaf)) {
+        throw 'Payload ZIP creation failed.'
+    }
+    Assert-SafeArchive $temporaryPayloadPath (@($packageFiles | ForEach-Object { "$packageName\$_" }) + $packageName)
+    Move-Item -LiteralPath $temporaryPayloadPath -Destination $payloadPath -Force
+}
+finally {
+    if (Test-Path -LiteralPath $temporaryRoot) {
+        Remove-Item -LiteralPath $temporaryRoot -Recurse -Force
     }
 }
-$platformDirectory = Join-Path $stagingPath 'platforms'
-New-Item -ItemType Directory -Force -Path $platformDirectory | Out-Null
-Copy-Item -LiteralPath (Join-Path $releasePath 'platforms\qwindows.dll') -Destination $platformDirectory -Force
-$packageFiles.Add('platforms\qwindows.dll')
 
-Copy-Item -LiteralPath (Join-Path $scriptRoot 'Create-DesktopShortcut.ps1') -Destination $stagingPath -Force
-Copy-Item -LiteralPath $ReadmePath -Destination $stagingPath -Force
-$packageFiles.Add('Create-DesktopShortcut.ps1')
-$packageFiles.Add('README.md')
-
-Assert-SafePackageText $stagingPath
-
-Compress-Archive -LiteralPath $stagingPath -DestinationPath $zipPath -CompressionLevel Optimal -Force
-if (-not (Test-Path -LiteralPath $zipPath -PathType Leaf)) {
-    throw 'ZIP package creation failed.'
-}
-Assert-SafeArchive $zipPath (@($packageFiles | ForEach-Object { "$packageName\$_" }) + $packageName)
-
-$installerWorkPath = Join-Path $outputPath ($packageName + '-installer-work')
-New-Item -ItemType Directory -Force -Path $installerWorkPath | Out-Null
-Copy-Item -LiteralPath $zipPath -Destination (Join-Path $installerWorkPath 'Payload.zip') -Force
-Copy-Item -LiteralPath (Join-Path $scriptRoot 'Install-Calculator.ps1') -Destination $installerWorkPath -Force
-Copy-Item -LiteralPath (Join-Path $scriptRoot 'Install-Calculator.cmd') -Destination $installerWorkPath -Force
-Compress-Archive -Path (Join-Path $installerWorkPath '*') -DestinationPath $installerPackagePath -CompressionLevel Optimal -Force
-Remove-Item -LiteralPath $installerWorkPath -Recurse -Force
-
-if (-not (Test-Path -LiteralPath $installerPackagePath -PathType Leaf)) {
-    throw 'Installer package creation failed.'
-}
-Assert-SafeArchive $installerPackagePath @('Payload.zip', 'Install-Calculator.ps1', 'Install-Calculator.cmd')
-
-Get-ChildItem -LiteralPath $outputPath -File | Where-Object { $_.Name -like "$packageName*" } |
-    Select-Object Name, Length, LastWriteTime
+Get-Item -LiteralPath $payloadPath | Select-Object Name, Length, LastWriteTime
