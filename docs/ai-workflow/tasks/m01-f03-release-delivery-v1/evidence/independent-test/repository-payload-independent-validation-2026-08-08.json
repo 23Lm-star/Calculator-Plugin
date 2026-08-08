@@ -1,0 +1,59 @@
+{
+  "task": "m01-f03-release-delivery-v1",
+  "date": "2026-08-08",
+  "payload": {
+    "path": "release/Payload.zip",
+    "size_bytes": 56029144,
+    "sha256": "87BE6060E0BB4BADBC0658FB162175F1310C48F388E71BF4641BDD0895A3E101",
+    "entry_count": 19,
+    "whitelist_exact": true,
+    "unsafe_entry_count": 0,
+    "text_path_leak_count": 0
+  },
+  "ast": {
+    "Create-DesktopShortcut.ps1": 0,
+    "Install-Calculator.ps1": 0,
+    "Package-Release.ps1": 0
+  },
+  "controlled_copy": {
+    "build_present": false,
+    "artifacts_release_present": false,
+    "real_vc_redist_executed": false,
+    "start_process_substitute": true,
+    "cases": [
+      {
+        "exit_code": 0,
+        "installer_success": true,
+        "application_copied": true,
+        "vc_redist_copied": true,
+        "shortcut_observed": true,
+        "no_launch_observed": true
+      },
+      {
+        "exit_code": 3010,
+        "installer_success": true,
+        "application_copied": true,
+        "vc_redist_copied": true,
+        "shortcut_observed": true,
+        "no_launch_observed": true
+      },
+      {
+        "exit_code": 1603,
+        "installer_success": false,
+        "error_contains_exit_code": true,
+        "error_contains_manual_installed_path": true,
+        "application_copied": true,
+        "vc_redist_copied": true,
+        "shortcut_observed": true,
+        "no_launch_observed": true
+      }
+    ],
+    "observed_vc_arguments": [
+      "/install",
+      "/quiet",
+      "/norestart"
+    ],
+    "observed_wait": true,
+    "observed_pass_thru": true
+  }
+}

@@ -15,69 +15,64 @@
         "Detail":  "parse errors: 0"
     },
     {
-        "Name":  "Package script completed",
+        "Name":  "OutputDirectory payload exists",
         "Passed":  true,
-        "Detail":  "completed without a terminating error"
+        "Detail":  "E:\\qt\\project1\\docs\\ai-workflow\\tasks\\m01-f03-release-delivery-v1\\evidence\\independent-test\\run-20260808-contract\\packages\\Payload.zip"
     },
     {
-        "Name":  "Portable ZIP exists",
-        "Passed":  true,
-        "Detail":  "E:\\qt\\project1\\docs\\ai-workflow\\tasks\\m01-f03-release-delivery-v1\\evidence\\independent-test\\run-20260807\\packages\\WangChenyangCalculator-1.1.0-independent.zip"
-    },
-    {
-        "Name":  "Installer ZIP exists",
-        "Passed":  true,
-        "Detail":  "E:\\qt\\project1\\docs\\ai-workflow\\tasks\\m01-f03-release-delivery-v1\\evidence\\independent-test\\run-20260807\\packages\\WangChenyangCalculator-1.1.0-independent-Installer.zip"
-    },
-    {
-        "Name":  "Portable ZIP entries are safe",
+        "Name":  "Payload entries are safe",
         "Passed":  true,
         "Detail":  "no absolute, UNC, extended, or traversal entries"
     },
     {
-        "Name":  "Portable ZIP member Qt5Core.dll",
+        "Name":  "Payload member Qt5Core.dll",
         "Passed":  true,
         "Detail":  "present"
     },
     {
-        "Name":  "Portable ZIP member Qt5Gui.dll",
+        "Name":  "Payload member Qt5Gui.dll",
         "Passed":  true,
         "Detail":  "present"
     },
     {
-        "Name":  "Portable ZIP member Qt5Widgets.dll",
+        "Name":  "Payload member Qt5Widgets.dll",
         "Passed":  true,
         "Detail":  "present"
     },
     {
-        "Name":  "Portable ZIP member platforms/qwindows.dll",
+        "Name":  "Payload member platforms/qwindows.dll",
         "Passed":  true,
         "Detail":  "present"
     },
     {
-        "Name":  "Portable ZIP member MSVCP140.dll",
+        "Name":  "Payload member MSVCP140.dll",
         "Passed":  true,
         "Detail":  "present"
     },
     {
-        "Name":  "Portable ZIP member VCRUNTIME140.dll",
+        "Name":  "Payload member VCRUNTIME140.dll",
         "Passed":  true,
         "Detail":  "present"
     },
     {
-        "Name":  "Portable ZIP member VCRUNTIME140_1.dll",
+        "Name":  "Payload member VCRUNTIME140_1.dll",
         "Passed":  true,
         "Detail":  "present"
     },
     {
-        "Name":  "Portable ZIP member vc_redist.x64.exe",
+        "Name":  "Payload member vc_redist.x64.exe",
         "Passed":  true,
         "Detail":  "present"
     },
     {
-        "Name":  "Portable text has no unsafe path",
+        "Name":  "Payload member Create-DesktopShortcut.ps1",
         "Passed":  true,
-        "Detail":  "none"
+        "Detail":  "present"
+    },
+    {
+        "Name":  "Payload member README.md",
+        "Passed":  true,
+        "Detail":  "present"
     },
     {
         "Name":  "Unapproved plugin is excluded",
@@ -92,22 +87,27 @@
     {
         "Name":  "Unsafe text rejected C:\\\\temp\\\\secret",
         "Passed":  true,
-        "Detail":  "Unsafe path found in package text: unsafe-dff9678b3cc94baa9f4259d3d99638d6.md"
+        "Detail":  "Unsafe path found in package text: unsafe-479d1c79057f400787da9ba61c99762b.md"
     },
     {
         "Name":  "Unsafe text rejected \\\\\\\\server\\\\share",
         "Passed":  true,
-        "Detail":  "Unsafe path found in package text: unsafe-b5f6b268fd9549199e0105045e86770d.md"
+        "Detail":  "Unsafe path found in package text: unsafe-70fd261db6124b3a910e21036413d476.md"
     },
     {
         "Name":  "Unsafe text rejected ..\\\\escape",
         "Passed":  true,
-        "Detail":  "Unsafe path found in package text: unsafe-8df51943d8fc4b209cd382b4c5d809a1.md"
+        "Detail":  "Unsafe path found in package text: unsafe-59b10f4e74e24c728c84806d513c7f15.md"
     },
     {
-        "Name":  "VC 0 installer reached runtime step",
+        "Name":  "Controlled copy omits build",
         "Passed":  true,
-        "Detail":  "no pre-runtime error"
+        "Detail":  "build omitted"
+    },
+    {
+        "Name":  "Controlled copy omits artifacts/release",
+        "Passed":  true,
+        "Detail":  "artifacts/release omitted"
     },
     {
         "Name":  "VC 0 invocation count",
@@ -120,14 +120,19 @@
         "Detail":  "arguments: /install /quiet /norestart"
     },
     {
-        "Name":  "VC 0 wait",
+        "Name":  "VC 0 wait/pass-through",
         "Passed":  true,
-        "Detail":  "Wait=True"
+        "Detail":  "Wait=True; PassThru=True"
     },
     {
         "Name":  "VC 0 copied executable",
         "Passed":  true,
-        "Detail":  "E:\\qt\\project1\\docs\\ai-workflow\\tasks\\m01-f03-release-delivery-v1\\evidence\\independent-test\\run-20260807\\install-0\\installed-app"
+        "Detail":  "E:\\qt\\project1\\docs\\ai-workflow\\tasks\\m01-f03-release-delivery-v1\\evidence\\independent-test\\run-20260808-contract\\install-0-no-launch\\installed-app"
+    },
+    {
+        "Name":  "VC 0 copied runtime",
+        "Passed":  true,
+        "Detail":  "E:\\qt\\project1\\docs\\ai-workflow\\tasks\\m01-f03-release-delivery-v1\\evidence\\independent-test\\run-20260808-contract\\install-0-no-launch\\installed-app"
     },
     {
         "Name":  "VC 0 shortcut created",
@@ -135,14 +140,14 @@
         "Detail":  "C:\\Users\\王晨扬\\Desktop\\M01F03-0.lnk"
     },
     {
+        "Name":  "VC 0 NoLaunch suppresses application",
+        "Passed":  true,
+        "Detail":  "application Start-Process calls: 0"
+    },
+    {
         "Name":  "VC 0 succeeds",
         "Passed":  true,
         "Detail":  "no terminating error"
-    },
-    {
-        "Name":  "VC 3010 installer reached runtime step",
-        "Passed":  true,
-        "Detail":  "no pre-runtime error"
     },
     {
         "Name":  "VC 3010 invocation count",
@@ -155,14 +160,19 @@
         "Detail":  "arguments: /install /quiet /norestart"
     },
     {
-        "Name":  "VC 3010 wait",
+        "Name":  "VC 3010 wait/pass-through",
         "Passed":  true,
-        "Detail":  "Wait=True"
+        "Detail":  "Wait=True; PassThru=True"
     },
     {
         "Name":  "VC 3010 copied executable",
         "Passed":  true,
-        "Detail":  "E:\\qt\\project1\\docs\\ai-workflow\\tasks\\m01-f03-release-delivery-v1\\evidence\\independent-test\\run-20260807\\install-3010-no-launch\\installed-app"
+        "Detail":  "E:\\qt\\project1\\docs\\ai-workflow\\tasks\\m01-f03-release-delivery-v1\\evidence\\independent-test\\run-20260808-contract\\install-3010-no-launch\\installed-app"
+    },
+    {
+        "Name":  "VC 3010 copied runtime",
+        "Passed":  true,
+        "Detail":  "E:\\qt\\project1\\docs\\ai-workflow\\tasks\\m01-f03-release-delivery-v1\\evidence\\independent-test\\run-20260808-contract\\install-3010-no-launch\\installed-app"
     },
     {
         "Name":  "VC 3010 shortcut created",
@@ -182,7 +192,7 @@
     {
         "Name":  "VC 3010 restart message",
         "Passed":  true,
-        "Detail":  "Desktop shortcut created: C:\\Users\\王晨扬\\Desktop\\M01F03-3010.lnk\r\nMicrosoft Visual C++ x64 runtime installation completed; restart is required.\r\nInstalled to: E:\\qt\\project1\\docs\\ai-workflow\\tasks\\m01-f03-release-delivery-v1\\evidence\\independent-test\\run-20260807\\install-3010-no-launch\\installed-app"
+        "Detail":  "Desktop shortcut created: C:\\Users\\王晨扬\\Desktop\\M01F03-3010.lnk\r\nMicrosoft Visual C++ x64 runtime installation completed; restart is required.\r\nInstalled to: E:\\qt\\project1\\docs\\ai-workflow\\tasks\\m01-f03-release-delivery-v1\\evidence\\independent-test\\run-20260808-contract\\install-3010-no-launch\\installed-app"
     },
     {
         "Name":  "VC 1603 invocation count",
@@ -195,14 +205,19 @@
         "Detail":  "arguments: /install /quiet /norestart"
     },
     {
-        "Name":  "VC 1603 wait",
+        "Name":  "VC 1603 wait/pass-through",
         "Passed":  true,
-        "Detail":  "Wait=True"
+        "Detail":  "Wait=True; PassThru=True"
     },
     {
         "Name":  "VC 1603 copied executable",
         "Passed":  true,
-        "Detail":  "E:\\qt\\project1\\docs\\ai-workflow\\tasks\\m01-f03-release-delivery-v1\\evidence\\independent-test\\run-20260807\\install-1603-no-launch\\installed-app"
+        "Detail":  "E:\\qt\\project1\\docs\\ai-workflow\\tasks\\m01-f03-release-delivery-v1\\evidence\\independent-test\\run-20260808-contract\\install-1603-no-launch\\installed-app"
+    },
+    {
+        "Name":  "VC 1603 copied runtime",
+        "Passed":  true,
+        "Detail":  "E:\\qt\\project1\\docs\\ai-workflow\\tasks\\m01-f03-release-delivery-v1\\evidence\\independent-test\\run-20260808-contract\\install-1603-no-launch\\installed-app"
     },
     {
         "Name":  "VC 1603 shortcut created",
@@ -217,16 +232,11 @@
     {
         "Name":  "VC 1603 fails",
         "Passed":  true,
-        "Detail":  "Microsoft Visual C++ x64 runtime installation failed with exit code 1603. Run this file manually: E:\\qt\\project1\\docs\\ai-workflow\\tasks\\m01-f03-release-delivery-v1\\evidence\\independent-test\\run-20260807\\install-1603-no-launch\\installed-app\\vc_redist.x64.exe"
+        "Detail":  "Microsoft Visual C++ x64 runtime installation failed with exit code 1603. Run this file manually: E:\\qt\\project1\\docs\\ai-workflow\\tasks\\m01-f03-release-delivery-v1\\evidence\\independent-test\\run-20260808-contract\\install-1603-no-launch\\installed-app\\vc_redist.x64.exe"
     },
     {
         "Name":  "VC 1603 failure message",
         "Passed":  true,
-        "Detail":  "Microsoft Visual C++ x64 runtime installation failed with exit code 1603. Run this file manually: E:\\qt\\project1\\docs\\ai-workflow\\tasks\\m01-f03-release-delivery-v1\\evidence\\independent-test\\run-20260807\\install-1603-no-launch\\installed-app\\vc_redist.x64.exe"
-    },
-    {
-        "Name":  "Portable application launch",
-        "Passed":  true,
-        "Detail":  "PID=884"
+        "Detail":  "Microsoft Visual C++ x64 runtime installation failed with exit code 1603. Run this file manually: E:\\qt\\project1\\docs\\ai-workflow\\tasks\\m01-f03-release-delivery-v1\\evidence\\independent-test\\run-20260808-contract\\install-1603-no-launch\\installed-app\\vc_redist.x64.exe"
     }
 ]

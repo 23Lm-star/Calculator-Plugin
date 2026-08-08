@@ -10,10 +10,10 @@ $scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 if ([string]::IsNullOrWhiteSpace($InstallDirectory)) {
     $InstallDirectory = Join-Path $env:LOCALAPPDATA 'Programs\WangChenyangCalculator'
 }
-$payloadPath = Join-Path $scriptRoot 'Payload.zip'
+$payloadPath = Join-Path (Split-Path -Parent (Split-Path -Parent $scriptRoot)) 'release\Payload.zip'
 
 if (-not (Test-Path -LiteralPath $payloadPath -PathType Leaf)) {
-    throw "Installer payload was not found: $payloadPath"
+    throw ('Installer payload was not found: {0}. Clone or download the complete project, keep the release directory intact, then run Install-Calculator.cmd from scripts\\release.' -f $payloadPath)
 }
 
 $temporaryDirectory = Join-Path $env:TEMP ('WangChenyangCalculator-' + [guid]::NewGuid().ToString('N'))
