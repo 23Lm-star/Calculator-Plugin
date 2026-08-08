@@ -1,18 +1,18 @@
 # Wang Chenyang Calculator for Windows
 
-## ZIP package
+## Install
 
-1. Extract the ZIP file to a writable local folder. Do not run the application from inside the ZIP viewer.
-2. Open the extracted folder and run `Create-DesktopShortcut.ps1` with PowerShell.
-3. Start the application from the `WangChenyangCalculator` desktop shortcut, or run `WangChenyangCalculator.exe` directly.
+The only recommended installation step is:
 
-The Qt runtime is included with the application; users do not need a Qt development toolchain. The package also includes `vc_redist.x64.exe`, the Microsoft Visual C++ x64 runtime installer. For the portable ZIP, run `vc_redist.x64.exe` manually if the runtime is not already installed. Windows 10 or Windows 11 x64 is required. If Windows reports a missing DLL, keep the package folder intact and contact the distributor with the missing file name.
+1. Clone the complete project repository, or download and extract the complete project archive.
+2. Open `scripts\release` and run `Install-Calculator.cmd`.
 
-## Installer package
+PowerShell is an equivalent fallback: run `Install-Calculator.ps1` from the same `scripts\release` directory with `-ExecutionPolicy Bypass`.
 
-1. Extract `WangChenyangCalculator-<version>-Installer.zip` to a writable local folder.
-2. Run `Install-Calculator.cmd`, or run `Install-Calculator.ps1` from PowerShell with `-ExecutionPolicy Bypass`.
+The installer reads the repository-tracked `release\Payload.zip`, installs to the current user's local application directory, creates the desktop shortcut, and then runs the bundled `vc_redist.x64.exe` with `/install /quiet /norestart`. Qt and Microsoft Visual C++ runtime files required by the application are already in the payload. Windows 10 or Windows 11 x64 is required.
 
-The installer copies the application into the current user's local application folder, creates a desktop shortcut, then automatically runs the deployed `vc_redist.x64.exe` with `/install /quiet /norestart`. No Qt development toolchain is required. If the Visual C++ runtime installation fails, the installer prints the deployed `vc_redist.x64.exe` path so it can be run manually. No administrator permission is required.
+After a successful installation the calculator starts automatically. To remove it, delete the installed application directory and the `WangChenyangCalculator` desktop shortcut.
 
-The installer starts the application after a successful installation. To remove it, delete the installed application folder and the `WangChenyangCalculator` desktop shortcut.
+## Maintainers
+
+`Package-Release.ps1` rebuilds the tracked `release\Payload.zip` from a Release directory. It is a maintainer packaging operation, not an end-user installation step.
