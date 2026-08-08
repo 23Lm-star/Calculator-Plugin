@@ -5,8 +5,8 @@ internal_id: m01-f03-release-delivery-v1
 human_name: 发布交付物生成与部署脚本化
 workflow_version: v1.1
 task_card_version: v1.2
-status: local_integration_complete
-stage: local_delivery_complete
+status: version_branch_published
+stage: version_1_1_0_published
 branch: codex/release-delivery-v1.0
 base_branch: integration
 base_commit: 1ce0e9a
@@ -92,6 +92,14 @@ repair_verification_2026_08_08:
   real_vc_runtime_executed: false
   disk_capacity: access_denied_by_managed_sandbox
   evidence: evidence/integration/repair-isolated-validation-2026-08-08.md
+version_delivery:
+  main_equivalent_branch: master
+  main_merge_commit: dd91e00da700d0b164157b26719b7c73017418b9
+  remote_branch: origin/1.1.0
+  remote_commit: dd91e00da700d0b164157b26719b7c73017418b9
+  remote_verification: git ls-remote --heads origin refs/heads/1.1.0
+  tag_created: false
+  deployment_performed: false
 next_session_prompt: |
   $development-os 独立测试 仓库源码直接安装交付 docs/ai-workflow/tasks/m01-f03-release-delivery-v1/
 ```
