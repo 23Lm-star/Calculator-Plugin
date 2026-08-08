@@ -5,8 +5,8 @@ internal_id: m01-f03-release-delivery-v1
 human_name: 发布交付物生成与部署脚本化
 workflow_version: v1.1
 task_card_version: v1.2
-status: candidate_committed_pending_current_integration_merge
-stage: current_integration_conflicts_resolved_pending_regression
+status: local_integration_complete
+stage: local_delivery_complete
 branch: codex/release-delivery-v1.0
 base_branch: integration
 base_commit: 1ce0e9a
@@ -33,7 +33,9 @@ approval_decisions: []
 integration:
   candidate_feature_commit: d45411457b7e88896d170d625c23e6e3d977ac5e
   target_branch: integration
-  target_commit: 0b18a4ed285e628a42c7ebe610d90d3b1398619e
+  target_commit: dff723bcf8133471c69c11fe3516863a15d307d7
+  local_merge_commit: dff723bcf8133471c69c11fe3516863a15d307d7
+  regression_result: passed
   merge_result: conflict_free_no_commit_candidate
   regression_result: blocked_insufficient_disk_space
   report: integration-report.md
