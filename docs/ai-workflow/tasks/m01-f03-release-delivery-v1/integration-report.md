@@ -2,7 +2,7 @@
 
 ## Outcome
 
-Local integration is **blocked**. The feature commit `d45411457b7e88896d170d625c23e6e3d977ac5e` was candidate-merged, without committing, onto `integration@1ce0e9a46700fb80e0389457c2dc0452864d0003` in an isolated worktree. The merge was conflict-free and `git diff --check` passed.
+Local integration is **validated but not performed**. The repaired candidate was merged, without committing and without fast-forward, onto detached `integration@1ce0e9a46700fb80e0389457c2dc0452864d0003` in a new isolated worktree. The merge was conflict-free; both staged and unstaged `git diff --check` gates passed.
 
 `engine_tests.exe` passed with `All CalculatorEngine tests passed.` The complete release validation command could not finish because the local filesystem reported no available free space. It failed while copying the portable ZIP into the installer package with `Copy-Item : There is not enough space on the disk.`
 
@@ -17,7 +17,29 @@ Local integration is **blocked**. The feature commit `d45411457b7e88896d170d625c
 
 ## Decision
 
-No local merge was made to `integration`. `main` was not merged, no tag was created, no remote was contacted, and no deployment occurred. Re-run the candidate regression after providing enough temporary capacity for the two approximately 57 MB ZIPs and their extraction/install test directories.
+No local merge was made to `integration`. `main` was not merged, no tag was created, no remote was contacted, and no deployment occurred. The earlier capacity failure is historical; the repaired isolated regression has passed and its capacity query restriction is recorded below.
+
+## Pre-Merge Re-run | 2026-08-08
+
+Candidate `b591d6d` passed a new fresh-clone installer verification: tracked payload present with the required SHA-256, 19-entry safe ZIP whitelist, CMD-to-sibling-PowerShell repository payload resolution, zero PowerShell AST errors, and the 23-assertion isolated `-NoLaunch` installation. The VC process was intercepted and verified with `/install /quiet /norestart`; no real VC runtime installer ran.
+
+The actual candidate merge into `integration` remains **not run** and requires explicit approval. The prior full-regression result was superseded by the successful repaired isolated validation recorded below.
+
+Evidence: `evidence/integration/candidate-premerge-rerun-2026-08-08.md`.
+
+## Repair Candidate Verification | 2026-08-08
+
+The prior failure was an interface mismatch: the package script did not accept the harness's existing `-OutputDirectory` argument. The repaired candidate is `b591d6d` plus two uncommitted repair files: `scripts/release/Package-Release.ps1` and the task-scoped independent validation harness. No candidate commit was created.
+
+| Gate | Exit code | Result |
+| --- | ---: | --- |
+| `git merge --no-commit --no-ff b591d6d` | 0 | Conflict-free; stopped before commit. |
+| `git diff --check` | 0 | No unstaged whitespace errors. |
+| `git diff --cached --check` | 0 | No staged whitespace errors. |
+| `build/v1.1-engine/release/engine_tests.exe` | 0 | `All CalculatorEngine tests passed.` |
+| `run-independent-validation.ps1` | 0 | 48 assertions passed; VC process calls intercepted in-process. |
+
+The isolated worktree copied untracked build outputs only after matching Engine SHA-256 `A64C1FD5775E5019751E38062736076401EEF534526F5FE539C457AF9D7015B1` and application EXE SHA-256 `B1D0576D18B7B07109FF49368EC8BB32CB62DED5924A6AF93CB3597523D0C413`. Disk-capacity queries were denied by the managed sandbox, so capacity is unavailable rather than inferred. The isolated merge remains uncommitted. Do not create a candidate commit or actually merge to `integration` without explicit approval.
 
 ## NEXT_SESSION_PROMPT
 

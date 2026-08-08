@@ -4,7 +4,7 @@
 Deliver a Git-tracked `release/Payload.zip` so a complete project checkout installs Wang Chenyang Calculator through `scripts/release/Install-Calculator.cmd` without Qt, Visual Studio, package generation, or an external Installer ZIP.
 
 ## Current Phase
-Phase 4 - development handoff
+Phase 5 - repair, independent validation, audit, and isolated integration candidate verification
 
 ## Phases
 
@@ -29,6 +29,12 @@ Phase 4 - development handoff
 - [x] Record hashes, sizes, commands, exit codes, risks, and the independent-test prompt.
 - **Status:** complete
 
+### Phase 5: Release validation contract repair
+- [x] Restore the documented `-OutputDirectory` compatibility for `Package-Release.ps1` without changing the tracked-payload delivery contract.
+- [x] Align the stale independent validation harness with the single `Payload.zip` output and repository-relative installer flow.
+- [x] Run independent test and audit gates, then candidate-merge the repaired candidate into a new isolated integration worktree without committing.
+- **Status:** complete
+
 ## Decisions Made
 
 | Decision | Rationale |
@@ -47,3 +53,4 @@ Phase 4 - development handoff
 | Validation script used `$PSScriptRoot` in a parameter default | 1 | Resolve the default project root after the parameter block. |
 | ZIP root directory had a bare entry without a separator | 1 | Derive the root from a nested entry and exclude the bare root before trimming. |
 | VC process substitute recorded in the wrong scope | 1 | Store and assert the test-only invocation record in global scope, then remove it in cleanup. |
+| Full release validation passed `-OutputDirectory` to `Package-Release.ps1`, but the candidate omitted that parameter | 1 | Restore compatibility in the package script; the harness must verify the current single tracked-payload contract rather than obsolete external ZIP outputs. |

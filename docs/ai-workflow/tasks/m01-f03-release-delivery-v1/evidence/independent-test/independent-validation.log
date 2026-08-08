@@ -1,51 +1,51 @@
 ﻿ASSERT Parser Install-Calculator.ps1: PASS - parse errors: 0
 ASSERT Parser Package-Release.ps1: PASS - parse errors: 0
 ASSERT Parser Create-DesktopShortcut.ps1: PASS - parse errors: 0
-ASSERT Package script completed: PASS - completed without a terminating error
-ASSERT Portable ZIP exists: PASS - E:\qt\project1\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260807\packages\WangChenyangCalculator-1.1.0-independent.zip
-ASSERT Installer ZIP exists: PASS - E:\qt\project1\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260807\packages\WangChenyangCalculator-1.1.0-independent-Installer.zip
-ASSERT Portable ZIP entries are safe: PASS - no absolute, UNC, extended, or traversal entries
-ASSERT Portable ZIP member Qt5Core.dll: PASS - present
-ASSERT Portable ZIP member Qt5Gui.dll: PASS - present
-ASSERT Portable ZIP member Qt5Widgets.dll: PASS - present
-ASSERT Portable ZIP member platforms/qwindows.dll: PASS - present
-ASSERT Portable ZIP member MSVCP140.dll: PASS - present
-ASSERT Portable ZIP member VCRUNTIME140.dll: PASS - present
-ASSERT Portable ZIP member VCRUNTIME140_1.dll: PASS - present
-ASSERT Portable ZIP member vc_redist.x64.exe: PASS - present
-ASSERT Portable text has no unsafe path: PASS - none
+ASSERT OutputDirectory payload exists: PASS - E:\qt\project1\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260808-contract\packages\Payload.zip
+ASSERT Payload entries are safe: PASS - no absolute, UNC, extended, or traversal entries
+ASSERT Payload member Qt5Core.dll: PASS - present
+ASSERT Payload member Qt5Gui.dll: PASS - present
+ASSERT Payload member Qt5Widgets.dll: PASS - present
+ASSERT Payload member platforms/qwindows.dll: PASS - present
+ASSERT Payload member MSVCP140.dll: PASS - present
+ASSERT Payload member VCRUNTIME140.dll: PASS - present
+ASSERT Payload member VCRUNTIME140_1.dll: PASS - present
+ASSERT Payload member vc_redist.x64.exe: PASS - present
+ASSERT Payload member Create-DesktopShortcut.ps1: PASS - present
+ASSERT Payload member README.md: PASS - present
 ASSERT Unapproved plugin is excluded: PASS - platforms/unexpected.dll
 ASSERT Unapproved translation is excluded: PASS - translations/private.txt
-ASSERT Unsafe text rejected C:\\temp\\secret: PASS - Unsafe path found in package text: unsafe-dff9678b3cc94baa9f4259d3d99638d6.md
-ASSERT Unsafe text rejected \\\\server\\share: PASS - Unsafe path found in package text: unsafe-b5f6b268fd9549199e0105045e86770d.md
-ASSERT Unsafe text rejected ..\\escape: PASS - Unsafe path found in package text: unsafe-8df51943d8fc4b209cd382b4c5d809a1.md
-ASSERT VC 0 installer reached runtime step: PASS - no pre-runtime error
+ASSERT Unsafe text rejected C:\\temp\\secret: PASS - Unsafe path found in package text: unsafe-479d1c79057f400787da9ba61c99762b.md
+ASSERT Unsafe text rejected \\\\server\\share: PASS - Unsafe path found in package text: unsafe-70fd261db6124b3a910e21036413d476.md
+ASSERT Unsafe text rejected ..\\escape: PASS - Unsafe path found in package text: unsafe-59b10f4e74e24c728c84806d513c7f15.md
+ASSERT Controlled copy omits build: PASS - build omitted
+ASSERT Controlled copy omits artifacts/release: PASS - artifacts/release omitted
 ASSERT VC 0 invocation count: PASS - calls: 1
 ASSERT VC 0 arguments: PASS - arguments: /install /quiet /norestart
-ASSERT VC 0 wait: PASS - Wait=True
-ASSERT VC 0 copied executable: PASS - E:\qt\project1\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260807\install-0\installed-app
+ASSERT VC 0 wait/pass-through: PASS - Wait=True; PassThru=True
+ASSERT VC 0 copied executable: PASS - E:\qt\project1\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260808-contract\install-0-no-launch\installed-app
+ASSERT VC 0 copied runtime: PASS - E:\qt\project1\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260808-contract\install-0-no-launch\installed-app
 ASSERT VC 0 shortcut created: PASS - C:\Users\王晨扬\Desktop\M01F03-0.lnk
+ASSERT VC 0 NoLaunch suppresses application: PASS - application Start-Process calls: 0
 ASSERT VC 0 succeeds: PASS - no terminating error
-ASSERT VC 3010 installer reached runtime step: PASS - no pre-runtime error
 ASSERT VC 3010 invocation count: PASS - calls: 1
 ASSERT VC 3010 arguments: PASS - arguments: /install /quiet /norestart
-ASSERT VC 3010 wait: PASS - Wait=True
-ASSERT VC 3010 copied executable: PASS - E:\qt\project1\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260807\install-3010-no-launch\installed-app
+ASSERT VC 3010 wait/pass-through: PASS - Wait=True; PassThru=True
+ASSERT VC 3010 copied executable: PASS - E:\qt\project1\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260808-contract\install-3010-no-launch\installed-app
+ASSERT VC 3010 copied runtime: PASS - E:\qt\project1\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260808-contract\install-3010-no-launch\installed-app
 ASSERT VC 3010 shortcut created: PASS - C:\Users\王晨扬\Desktop\M01F03-3010.lnk
 ASSERT VC 3010 NoLaunch suppresses application: PASS - application Start-Process calls: 0
 ASSERT VC 3010 succeeds: PASS - no terminating error
 ASSERT VC 3010 restart message: PASS - Desktop shortcut created: C:\Users\王晨扬\Desktop\M01F03-3010.lnk
 Microsoft Visual C++ x64 runtime installation completed; restart is required.
-Installed to: E:\qt\project1\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260807\install-3010-no-launch\installed-app
+Installed to: E:\qt\project1\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260808-contract\install-3010-no-launch\installed-app
 ASSERT VC 1603 invocation count: PASS - calls: 1
 ASSERT VC 1603 arguments: PASS - arguments: /install /quiet /norestart
-ASSERT VC 1603 wait: PASS - Wait=True
-ASSERT VC 1603 copied executable: PASS - E:\qt\project1\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260807\install-1603-no-launch\installed-app
+ASSERT VC 1603 wait/pass-through: PASS - Wait=True; PassThru=True
+ASSERT VC 1603 copied executable: PASS - E:\qt\project1\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260808-contract\install-1603-no-launch\installed-app
+ASSERT VC 1603 copied runtime: PASS - E:\qt\project1\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260808-contract\install-1603-no-launch\installed-app
 ASSERT VC 1603 shortcut created: PASS - C:\Users\王晨扬\Desktop\M01F03-1603.lnk
 ASSERT VC 1603 NoLaunch suppresses application: PASS - application Start-Process calls: 0
-ASSERT VC 1603 fails: PASS - Microsoft Visual C++ x64 runtime installation failed with exit code 1603. Run this file manually: E:\qt\project1\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260807\install-1603-no-launch\installed-app\vc_redist.x64.exe
-ASSERT VC 1603 failure message: PASS - Microsoft Visual C++ x64 runtime installation failed with exit code 1603. Run this file manually: E:\qt\project1\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260807\install-1603-no-launch\installed-app\vc_redist.x64.exe
-ASSERT Portable application launch: PASS - PID=884
-HASH portable AB95087DCE80D9C9D89237DC380BD000B3818F6FB3E69C46DBA77B0372C79A99
-HASH installer 3CE94E6FC1CC0F97FC04C3D0F3F28412F50C724AA11CB30B48059AC1B4263A50
+ASSERT VC 1603 fails: PASS - Microsoft Visual C++ x64 runtime installation failed with exit code 1603. Run this file manually: E:\qt\project1\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260808-contract\install-1603-no-launch\installed-app\vc_redist.x64.exe
+ASSERT VC 1603 failure message: PASS - Microsoft Visual C++ x64 runtime installation failed with exit code 1603. Run this file manually: E:\qt\project1\docs\ai-workflow\tasks\m01-f03-release-delivery-v1\evidence\independent-test\run-20260808-contract\install-1603-no-launch\installed-app\vc_redist.x64.exe
 RESULT PASS

@@ -3,6 +3,7 @@ param(
     [string]$ReleaseDirectory,
     [string]$Version = '1.1.0',
     [string]$PayloadPath,
+    [string]$OutputDirectory,
     [string]$ReadmePath
 )
 
@@ -14,7 +15,12 @@ if ([string]::IsNullOrWhiteSpace($ReleaseDirectory)) {
     $ReleaseDirectory = Join-Path $projectRoot 'build\v1.1-app\release'
 }
 if ([string]::IsNullOrWhiteSpace($PayloadPath)) {
-    $PayloadPath = Join-Path $projectRoot 'release\Payload.zip'
+    $PayloadPath = if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
+        Join-Path $projectRoot 'release\Payload.zip'
+    }
+    else {
+        Join-Path $OutputDirectory 'Payload.zip'
+    }
 }
 if ([string]::IsNullOrWhiteSpace($ReadmePath)) {
     $ReadmePath = Join-Path $projectRoot 'release\README.md'
