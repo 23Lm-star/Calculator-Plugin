@@ -55,10 +55,10 @@ integration_candidate:
   full_regression_report: "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/集成回归报告.md"
   full_regression_status: "BLOCKED"
   tested_feature_count: 5
-  passed_feature_count: 1
+  passed_feature_count: 3
   failed_feature_count: 0
   skipped_feature_count: 0
-  blocked_feature_count: 4
+  blocked_feature_count: 2
   post_merge_consistency_check: "PASS: 候选合并、路径边界、版本一致性和补丁格式检查通过；未执行最终合并。"
 test_runtime_sandbox:
   root: "C:/tmp/project-workflow-upgrade-v1-2-payload-regression"

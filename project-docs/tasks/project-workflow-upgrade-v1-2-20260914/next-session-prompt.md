@@ -9,7 +9,7 @@
 - 最后验证证据：`集成回归报告.md`、`独立测试报告-候选提交.md`、`独立审计报告-候选提交.md`
 - 允许路径：`docs/agent.md`、`project-docs/`
 - 禁止路径：`src/`、`tests/`、`calculator.pro`、`docs/ai-workflow/`、远程仓库
-- 未解决发现：Release 构建缺少 `resources/runtime/win-x64`；桌面自动化服务无法提供可操作窗口，导致 F-001 至 F-004 的 GUI 回归阻塞。
+- 未解决发现：Release 构建缺少 `resources/runtime/win-x64`；人工 GUI 证据已通过 F-001 和 F-003，仍缺 F-002 退格及 F-004 主题/本地图片路径。
 - 后续动作：新建独立修复任务并取得对发布运行时资产和测试环境的精确批准；完成后从当前候选基线重跑完整回归。
 - 仍需批准：业务资源/发布资产变更、测试环境配置、最终合并到 `integration`；任何远程、`main`、发布或部署动作另需精确批准。
 - 停止条件：未解决构建或 GUI 回归阻塞时，不得合并到 `integration`。
