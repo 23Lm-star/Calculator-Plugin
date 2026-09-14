@@ -13,3 +13,5 @@
 - 2026-09-14：用户批准仅修改 `scripts/release/Package-Release.ps1` 第 65 行并补充 `project-tools/test-scripts/` 回归脚本。
 - 2026-09-14：ZIP 路径分隔符回归测试、Release 强制重建、Qt 部署、发布包生成、隔离解压、载荷清单、三项 CRT SHA-256 和隔离启动均通过；F-005 已修复。
 - 当前结果：`ACTIVE`（F-005 修复验证通过；仍需冻结交接后的独立测试与独立审计，禁止集成、推送、合并 `main` 或部署）。
+- 2026-09-14：独立测试发现冻结提交遗漏三项被 `.gitignore` 忽略的 MSVC CRT DLL，导致干净工作树 Release 构建阻塞。
+- 2026-09-14：用户批准将 `MSVCP140.dll`、`VCRUNTIME140.dll` 和 `VCRUNTIME140_1.dll` 作为精确例外纳入 Git；其他 DLL 继续忽略。

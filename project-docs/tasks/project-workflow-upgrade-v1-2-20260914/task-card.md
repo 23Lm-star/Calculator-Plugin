@@ -11,7 +11,7 @@
 - Acceptance criteria（验收标准）：v1.2 清单字段完整；入口指向 `project-docs/`；旧记录可读且未删除；升级证据通过路径、版本和哈希校验；三项 CRT DLL 的来源与目标 SHA-256（安全散列）一致；Release 构建和完整回归通过；不推送且不合并 `main`。
 - Dependencies（依赖）：现有 Qt 项目文档与三项历史任务记录。
 - Non-negotiable constraints（不可妥协约束）：不覆盖用户未提交改动；不改变业务行为；迁移可追溯、可回滚；仅本地候选，不推送、不合并 `main`。
-- Allowed paths（允许路径）：`docs/agent.md`、`project-docs/`、`resources/runtime/win-x64/`、既有忽略的 `build/` 和 `artifacts/` 输出。
+- Allowed paths（允许路径）：`.gitignore`、`docs/agent.md`、`project-docs/`、`resources/runtime/win-x64/`、既有忽略的 `build/` 和 `artifacts/` 输出。
 - Test requirements（测试要求）：迁移验证、旧记录完整性、版本一致性、路径边界检查、Release 构建、Engine（计算引擎）全量测试、发布载荷与隔离安装回归。
 - Risk level（风险级别）：medium（中）
 - Approval-needed actions（需批准动作）：已获用户精确批准，见 `approval-events.ndjson`。

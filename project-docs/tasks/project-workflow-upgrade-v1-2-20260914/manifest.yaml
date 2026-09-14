@@ -12,9 +12,9 @@ goal_status: "LOCKED"
 goal_ref: "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/goal.md"
 design_ref: "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/design.md"
 plan_ref: "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/plan.md"
-allowed_paths: ["docs/agent.md", "project-docs/", "resources/runtime/win-x64/", "scripts/release/Package-Release.ps1", "project-tools/test-scripts/Test-PackageReleaseArchivePath.ps1", "project-tools/test-scripts/Test-F005ReleasePackage.ps1", "build/", "artifacts/"]
+allowed_paths: [".gitignore", "docs/agent.md", "project-docs/", "resources/runtime/win-x64/", "scripts/release/Package-Release.ps1", "project-tools/test-scripts/Test-PackageReleaseArchivePath.ps1", "project-tools/test-scripts/Test-F005ReleasePackage.ps1", "build/", "artifacts/"]
 denied_paths: ["src/", "tests/", "calculator.pro", "docs/ai-workflow/", "remote", "main"]
-changed_paths: ["docs/agent.md", "project-docs/", "resources/runtime/win-x64/", "scripts/release/Package-Release.ps1", "project-tools/test-scripts/Test-PackageReleaseArchivePath.ps1", "project-tools/test-scripts/Test-F005ReleasePackage.ps1", "build/", "artifacts/"]
+changed_paths: [".gitignore", "docs/agent.md", "project-docs/", "resources/runtime/win-x64/", "scripts/release/Package-Release.ps1", "project-tools/test-scripts/Test-PackageReleaseArchivePath.ps1", "project-tools/test-scripts/Test-F005ReleasePackage.ps1", "build/", "artifacts/"]
 enabled_superpowers_skills: []
 fallback_mode: "DEV_OS_NATIVE"
 fallback_reason: "流程升级直接按 Development OS v1.2 原生规则执行。"

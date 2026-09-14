@@ -25,8 +25,8 @@
 ## Behavior unit BU-03（行为单元）: 验证本地 Windows Release 载荷
 
 - Input（输入）：本地 `artifacts/release/WangChenyangCalculator-1.1.0/` 的三项 MSVC CRT DLL。
-- Expected behavior（预期行为）：将 DLL 复制至 `resources/runtime/win-x64/`，Release 构建将其复制到输出目录，完整回归通过。
-- Files allowed to change（允许修改）：`resources/runtime/win-x64/`、`project-docs/` 和既有忽略的构建/产物输出。
+- Expected behavior（预期行为）：将三项 DLL 纳入 Git（版本控制）并复制至 `resources/runtime/win-x64/`，Release 构建将其复制到输出目录，完整回归通过。
+- Files allowed to change（允许修改）：`.gitignore`、`resources/runtime/win-x64/`、`project-docs/` 和既有忽略的构建/产物输出。
 - Files forbidden to change（禁止修改）：`src/`、`tests/`、`calculator.pro`、`docs/ai-workflow/`、远程仓库。
 - Verification（验证）：源/目标 SHA-256 一致；Release 构建、Engine 测试、发布载荷及隔离安装校验均通过。
 - Completion condition（完成条件）：回归报告为 PASS（通过），无推送和无 `main` 合并。

@@ -4,6 +4,9 @@
 *.ilk
 *.exe
 *.dll
+!resources/runtime/win-x64/MSVCP140.dll
+!resources/runtime/win-x64/VCRUNTIME140.dll
+!resources/runtime/win-x64/VCRUNTIME140_1.dll
 *.lib
 *.exp
 Makefile*
