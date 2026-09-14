@@ -1,0 +1,49 @@
+handoff_id: "handoff-workflow-upgrade-development-to-test-f005-crt-76537ad-20260914"
+handoff_type: "development_to_test"
+task_id: "project-workflow-upgrade-v1-2-20260914"
+workflow_version: "v1.2"
+source:
+  node: "修复"
+  session_id: "session-20260914-crt-tracking-repair"
+  actor: "agent"
+  completed_at: "2026-09-14T21:05:37+08:00"
+  branch: "codex/release-delivery-v1.0"
+  head_commit: "76537ad041e0723554d34150e28f1a546f8c8a81"
+  base_commit: "68ab54439f8e859779844ef4e6723f24e3545d25"
+  manifest_hash: "sha256:243988fa76df8723554a6a991fe12eaa942b2cac505bb773bf1ec7612dd90855"
+  previous_handoff_id: "handoff-workflow-upgrade-development-to-test-f005-7a1ef9d-20260914"
+destination:
+  node: "独立测试"
+  required_session_type: "fresh"
+  required_actor: "main-agent-or-authorized-agent"
+  exact_command: "$development-os-v1-2 独立测试 项目流程升级到 Development OS v1.2 project-docs/tasks/project-workflow-upgrade-v1-2-20260914/"
+scope:
+  allowed_paths: [".gitignore", "docs/agent.md", "project-docs/", "resources/runtime/win-x64/", "scripts/release/Package-Release.ps1", "project-tools/test-scripts/Test-PackageReleaseArchivePath.ps1", "project-tools/test-scripts/Test-F005ReleasePackage.ps1", "build/", "artifacts/"]
+  denied_paths: ["src/", "tests/", "calculator.pro", "docs/ai-workflow/", "remote", "main"]
+  changed_paths: [".gitignore", "resources/runtime/win-x64/MSVCP140.dll", "resources/runtime/win-x64/VCRUNTIME140.dll", "resources/runtime/win-x64/VCRUNTIME140_1.dll", "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/"]
+  unchanged_required_paths: ["src/", "tests/", "calculator.pro", "docs/ai-workflow/"]
+preconditions:
+  required_states: ["Goal: LOCKED", "Task: ACTIVE"]
+  required_approvals: ["goal-approval-20260914-runtime-regression", "approval-package-whitelist-repair-20260914"]
+  required_artifacts: ["task-card.md", "goal.md", "design.md", "plan.md", "修复报告-20260914.md"]
+  required_evidence: ["evidence/test/independent-test-f005-20260914.md"]
+  blocking_conditions: []
+source_result:
+  outcome: "PASS"
+  summary: "三项经 SHA-256 验证的 MSVC CRT DLL 已作为精确 Git 忽略例外纳入新的冻结提交。"
+  implementation_summary: "保留全局 DLL 忽略规则，只允许 resources/runtime/win-x64 下指定的三项运行时文件跟踪。"
+  test_summary: "前次独立测试已证明缺失运行时文件会阻塞干净工作树构建；本次仅修复该可复现的冻结载荷缺失。"
+  audit_summary: "未执行独立审计。"
+  unresolved_findings: []
+  risks: ["必须从本交接重新执行独立测试；旧测试结果不适用于新冻结提交。"]
+verification:
+  commands: ["git ls-tree -r 76537ad -- resources/runtime/win-x64", "Get-FileHash -Algorithm SHA256 resources/runtime/win-x64/*.dll"]
+  exit_codes: [0, 0]
+  evidence_refs: ["project-docs/tasks/project-workflow-upgrade-v1-2-20260914/evidence/test/independent-test-f005-20260914.md"]
+  git_status_before: "用户既有未提交改动存在且未暂存。"
+  git_status_after: "新提交仅含 .gitignore 精确例外、三项 CRT DLL 和当前任务记录。"
+  diff_hash: null
+next_action:
+  action: "执行独立测试复测"
+  stop_condition: "冻结提交、三项 DLL SHA-256、任务清单哈希或允许路径校验不一致。"
+  user_confirmation_required: true
