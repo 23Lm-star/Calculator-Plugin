@@ -1,0 +1,36 @@
+migration_id: "workflow-upgrade-20260914"
+project_id: "wangchenyang-calculator"
+from_version: "v1.1"
+to_version: "v1.2"
+pre_migration_snapshot:
+  git_head: "68ab54439f8e859779844ef4e6723f24e3545d25"
+  branch: "codex/release-delivery-v1.0"
+  workspace_status: "已有用户未提交改动，详见 validation evidence"
+  tracked_file_hashes:
+    docs/agent.md: "41c7f6eefe5dcf5ce3eb8d348365b25727c8827d998992043a87c692475b63a8"
+    docs/business-context.md: "e6954679689a47845f1755a1ea33da25e81a421a540c1625dcfd3dd45842ff80"
+    docs/ai-workflow/任务总览.md: "c6126c910f9ab27ebb0ab5e7c728a893a91d686f4ee877754a34389c495c5925"
+    docs/ai-workflow/项目时间流.md: "ab6f2307cc6e64aa518c75eae0c00586b7570b141adfd1625790a2a491197af0"
+started_at: "2026-09-14T00:00:00+08:00"
+completed_at: null
+status: "IN_PROGRESS"
+paths_checked:
+  - "docs/agent.md"
+  - "docs/business-context.md"
+  - "docs/ai-workflow/"
+  - "src/"
+  - "tests/"
+  - "calculator.pro"
+manifests_checked:
+  - "docs/ai-workflow/tasks/m01-f01-calculator-v1/manifest.md"
+  - "docs/ai-workflow/tasks/m01-f02-calculator-desktop-v1-1/manifest.md"
+  - "docs/ai-workflow/tasks/m01-f03-release-delivery-v1/manifest.md"
+validation_evidence:
+  - "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/evidence/upgrade-validation.md"
+rollback_reference: "project-docs/migrations/v1-1-to-v1-2-20260914.yaml"
+approval_ref: "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/approval-events.ndjson"
+scope:
+  preserved_legacy_root: "docs/ai-workflow/"
+  new_canonical_root: "project-docs/"
+  source_changed: false
+  blocker: "独立测试交接需要专用任务分支或经授权的冻结提交；当前分支含用户未提交的旧流程记录。"

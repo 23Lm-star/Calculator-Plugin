@@ -1,0 +1,20 @@
+schema_version: "1.0"
+profile_version: "1"
+project_type: "desktop"
+gates:
+  build: REQUIRED
+  typecheck: DISABLED
+  static_analysis: OPTIONAL
+  full_test: REQUIRED
+  task_test: REQUIRED
+  browser: DISABLED
+  performance: OPTIONAL
+  failure_scenario: REQUIRED
+  full_regression: REQUIRED
+optional_failure_policy: "REPORT_ONLY"
+owner: "王晨扬"
+approved_by: "王晨扬"
+approved_at: "2026-09-14T00:00:00+08:00"
+notes:
+  typecheck: "C++/qmake 项目无独立类型检查工具；由构建门禁覆盖编译检查。"
+  browser: "桌面 Qt Widgets 应用无浏览器路径。"

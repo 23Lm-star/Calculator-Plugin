@@ -1,0 +1,80 @@
+schema_version: "1.0"
+task_id: "project-workflow-upgrade-v1-2-20260914"
+human_name: "项目流程升级到 Development OS v1.2"
+workflow_version: "v1.2"
+status: "BLOCKED"
+project_id: "wangchenyang-calculator"
+task_card_ref: "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/task-card.md"
+branch_name: "codex/release-delivery-v1.0"
+base_branch: null
+base_commit: "68ab54439f8e859779844ef4e6723f24e3545d25"
+goal_status: "LOCKED"
+goal_ref: "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/goal.md"
+design_ref: "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/design.md"
+plan_ref: "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/plan.md"
+allowed_paths: ["docs/agent.md", "project-docs/"]
+denied_paths: ["src/", "tests/", "calculator.pro", "docs/ai-workflow/", "remote"]
+changed_paths: ["docs/agent.md", "project-docs/"]
+enabled_superpowers_skills: []
+fallback_mode: "DEV_OS_NATIVE"
+fallback_reason: "流程升级直接按 Development OS v1.2 原生规则执行。"
+plugin_runtime: null
+tdd:
+  exception: true
+  category: "DOCUMENTATION"
+  reason: "仅修改流程文档和清单，不存在可执行行为单元。"
+  alternative_evidence: ["project-docs/tasks/project-workflow-upgrade-v1-2-20260914/evidence/upgrade-validation.md"]
+subagent:
+  enabled: false
+  authorization_refs: []
+  roles: []
+  scope: []
+  permissions: []
+  evidence_refs: []
+active_event_chain_ref: "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/state-events.ndjson"
+active_goal_event_chain_ref: "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/goal-events.ndjson"
+active_finding_event_chain_ref: "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/finding-events.ndjson"
+repaired_from_chain_hash: null
+maintenance_event_ref: "project-docs/migrations/v1-1-to-v1-2-20260914.yaml"
+session:
+  current_session_id: "session-20260914-workflow-upgrade"
+  source_session_id: null
+  handoff_commit: null
+  handoff_timestamp: null
+  handoff_manifest_hash: null
+test_evidence_ref: "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/独立测试报告-候选提交.md"
+audit_evidence_ref: "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/独立审计报告-候选提交.md"
+regression_inventory_ref: "project-docs/regression/功能回归清单.yaml"
+handoff_refs:
+  - "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/handoffs/development-to-test-pending-commit.yaml"
+integration_candidate:
+  base_integration_commit: "03dc19823dac7c31a8791e893c41f4d8e039c0d6"
+  task_commit: "3dd1fa4a082f607be051e9e352bf833fa67e2546"
+  candidate_commit: null
+  candidate_ref: "codex/integration-candidate-workflow-upgrade-v1-2-20260914"
+  full_regression_report: "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/集成回归报告.md"
+  full_regression_status: "BLOCKED"
+  tested_feature_count: 5
+  passed_feature_count: 1
+  failed_feature_count: 0
+  skipped_feature_count: 0
+  blocked_feature_count: 4
+  post_merge_consistency_check: "PASS: 候选合并、路径边界、版本一致性和补丁格式检查通过；未执行最终合并。"
+test_runtime_sandbox:
+  root: "C:/tmp/project-workflow-upgrade-v1-2-payload-regression"
+  owner_session_id: "session-20260914-workflow-upgrade-integration"
+  cleanup_status: "RETAINED_FOR_EVIDENCE"
+human_audit_decision: "APPROVED"
+human_audit_required: true
+human_audit_status: "CONFIRMED"
+conditional_pass:
+  conditions: []
+  owners: []
+  due_dates: []
+  release_blocking: null
+  reviewer: null
+  follow_up_evidence: []
+task_repair_cycle: 0
+finding_attempt_count: {}
+integration_repair_cycle: 0
+snapshot_tag: null

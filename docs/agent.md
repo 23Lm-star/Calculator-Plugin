@@ -11,7 +11,7 @@
 - `src/view`：Qt Widgets 页面、布局和显示状态。
 - `src/controller`：View 与 Model 的输入编排、校验和错误反馈。
 - `tests/engine`：不链接 Qt 的 Model 独立编译与单元测试。
-- `docs/ai-workflow`：Development OS 的任务和交付记录。
+- `project-docs/`：Development OS v1.2（开发流程）规范目录；旧版 `docs/ai-workflow/`（历史流程记录）只读保留。
 
 ## 技术基线
 
@@ -27,3 +27,10 @@
 - 配置持久化限定在 `src/config/ConfigManager`，Controller 负责调用，View 仅负责输入与渲染。
 - 所有业务功能变更同步更新本文件及对应任务记录。
 - 先完成开发报告，再进入独立测试；测试、审计阶段只写各自报告和证据。
+
+## 流程版本
+
+- 当前项目流程版本：`v1.2`（Development OS v1.2，受控开发流程）。
+- v1.2 规范入口：`project-docs/agent.md`（项目流程规则）。
+- 项目清单：`project-docs/project-manifest.yaml`；质量门禁：`project-docs/quality-profile.yaml`。
+- 旧流程记录：`docs/ai-workflow/`，作为迁移前历史证据保留，不再作为新任务写入入口。
