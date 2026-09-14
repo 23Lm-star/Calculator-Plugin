@@ -1,0 +1,95 @@
+schema_version: "1.0"
+task_id: "calculator-crt-runtime-v1-2-20260914"
+human_name: "王晨扬的计算器：纳入 MSVC x64 CRT 并复测发布包"
+workflow_version: "v1.2"
+status: "TESTING"
+project_id: "wangchenyang-calculator"
+task_card_ref: "project-docs/tasks/calculator-crt-runtime-v1-2-20260914/task-card.md"
+branch_name: "codex/calculator-crt-runtime-v1-2-20260914"
+base_branch: "codex/chore/project-workflow-upgrade-v1-2-20260914"
+base_commit: "0192c57ed9626259e317b9f064a14f023cad026f"
+goal_status: "LOCKED"
+goal_ref: "project-docs/tasks/calculator-crt-runtime-v1-2-20260914/goal.md"
+design_ref: "project-docs/tasks/calculator-crt-runtime-v1-2-20260914/design.md"
+plan_ref: "project-docs/tasks/calculator-crt-runtime-v1-2-20260914/plan.md"
+allowed_paths:
+  - ".gitignore"
+  - "calculator.pro"
+  - "resources/runtime/win-x64/"
+  - "scripts/release/Package-Release.ps1"
+  - "release/Payload.zip"
+  - "project-docs/migrations/v1-1-to-v1-2-20260914.yaml"
+  - "project-docs/ai-workflow/"
+  - "project-docs/tasks/calculator-crt-runtime-v1-2-20260914/"
+denied_paths: ["src/", "tests/", "calculator.pro", "remote"]
+changed_paths:
+  - ".gitignore"
+  - "calculator.pro"
+  - "resources/runtime/win-x64/"
+  - "scripts/release/Package-Release.ps1"
+  - "release/Payload.zip"
+  - "project-docs/migrations/v1-1-to-v1-2-20260914.yaml"
+  - "project-docs/ai-workflow/"
+  - "project-docs/tasks/calculator-crt-runtime-v1-2-20260914/"
+enabled_superpowers_skills: []
+fallback_mode: "DEV_OS_NATIVE"
+fallback_reason: "按 Development OS v1.2 原生规则执行。"
+plugin_runtime: null
+tdd:
+  exception: true
+  category: "DEPENDENCY_PACKAGING"
+  reason: "本任务为已批准的二进制依赖与发布载荷修复，行为由构建和隔离启动门禁验证。"
+  alternative_evidence: []
+subagent:
+  enabled: false
+  authorization_refs: []
+  roles: []
+  scope: []
+  permissions: []
+  evidence_refs: []
+active_event_chain_ref: "project-docs/tasks/calculator-crt-runtime-v1-2-20260914/state-events.ndjson"
+active_goal_event_chain_ref: "project-docs/tasks/calculator-crt-runtime-v1-2-20260914/goal-events.ndjson"
+active_finding_event_chain_ref: "project-docs/tasks/calculator-crt-runtime-v1-2-20260914/finding-events.ndjson"
+repaired_from_chain_hash: null
+maintenance_event_ref: "project-docs/migrations/v1-1-to-v1-2-20260914.yaml"
+session:
+  current_session_id: "session-20260914-calculator-crt-runtime"
+  source_session_id: null
+  handoff_commit: null
+  handoff_timestamp: null
+  handoff_manifest_hash: null
+test_evidence_ref: "project-docs/tasks/calculator-crt-runtime-v1-2-20260914/evidence/independent-test.md"
+audit_evidence_ref: null
+regression_inventory_ref: "project-docs/regression/功能回归清单.yaml"
+handoff_refs: []
+integration_candidate:
+  base_integration_commit: null
+  task_commit: null
+  candidate_commit: null
+  candidate_ref: null
+  full_regression_report: null
+  full_regression_status: null
+  tested_feature_count: null
+  passed_feature_count: null
+  failed_feature_count: null
+  skipped_feature_count: null
+  blocked_feature_count: null
+  post_merge_consistency_check: null
+test_runtime_sandbox:
+  root: null
+  owner_session_id: null
+  cleanup_status: null
+human_audit_decision: null
+human_audit_required: true
+human_audit_status: "PENDING"
+conditional_pass:
+  conditions: []
+  owners: []
+  due_dates: []
+  release_blocking: null
+  reviewer: null
+  follow_up_evidence: []
+task_repair_cycle: 0
+finding_attempt_count: {}
+integration_repair_cycle: 0
+snapshot_tag: null

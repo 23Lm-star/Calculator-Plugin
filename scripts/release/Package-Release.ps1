@@ -78,12 +78,14 @@ function Assert-SafeArchive([string]$ArchivePath, [string[]]$AllowedEntries) {
 
 $runtimeNames = @(
     "$applicationName.exe", 'Qt5Core.dll', 'Qt5Gui.dll', 'Qt5Svg.dll', 'Qt5Widgets.dll',
+    'zlib.dll',
     'D3Dcompiler_47.dll', 'icudt58.dll', 'icuin58.dll', 'icuuc58.dll', 'libEGL.dll',
     'libGLESV2.dll', 'MSVCP140.dll', 'VCRUNTIME140.dll', 'VCRUNTIME140_1.dll',
     'opengl32sw.dll', 'vc_redist.x64.exe'
 )
 $requiredFiles = @(
     "$applicationName.exe", 'Qt5Core.dll', 'Qt5Gui.dll', 'Qt5Widgets.dll',
+    'zlib.dll',
     'MSVCP140.dll', 'VCRUNTIME140.dll', 'VCRUNTIME140_1.dll', 'vc_redist.x64.exe',
     'platforms\qwindows.dll'
 )

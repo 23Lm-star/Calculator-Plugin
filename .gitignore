@@ -20,4 +20,9 @@ build/
 !scripts/release/*.cmd
 !release/
 !release/README.md
+# 跟踪直接启动 Release 所需的 MSVC x64 CRT（C++ 运行库）可再分发文件。
+!resources/
+!resources/runtime/
+!resources/runtime/win-x64/
+!resources/runtime/win-x64/*.dll
 artifacts/

@@ -7,7 +7,7 @@ pre_migration_snapshot:
   branch: "codex/release-delivery-v1.0"
   workspace_status: "已有用户未提交改动，详见 validation evidence"
   tracked_file_hashes:
-    docs/agent.md: "41c7f6eefe5dcf5ce3eb8d348365b25727c8827d998992043a87c692475b63a8"
+    docs/agent.md: "028b00bddde12c5e1c612747d78939a7dcf52e30c3b07f3a12844f8cc9c1dd4b"
     docs/business-context.md: "e6954679689a47845f1755a1ea33da25e81a421a540c1625dcfd3dd45842ff80"
     docs/ai-workflow/任务总览.md: "c6126c910f9ab27ebb0ab5e7c728a893a91d686f4ee877754a34389c495c5925"
     docs/ai-workflow/项目时间流.md: "ab6f2307cc6e64aa518c75eae0c00586b7570b141adfd1625790a2a491197af0"
@@ -34,3 +34,9 @@ scope:
   new_canonical_root: "project-docs/"
   source_changed: false
   blocker: "独立测试交接需要专用任务分支或经授权的冻结提交；当前分支含用户未提交的旧流程记录。"
+hash_correction:
+  corrected_at: "2026-09-14T15:00:00+08:00"
+  corrected_by: "王晨扬批准，agent 执行"
+  reason: "原冻结快照哈希与 68ab544 基线 docs/agent.md 原始字节不一致。"
+  baseline_commit: "68ab54439f8e859779844ef4e6723f24e3545d25"
+  verification: "git show 68ab544:docs/agent.md -> SHA-256 028b00bddde12c5e1c612747d78939a7dcf52e30c3b07f3a12844f8cc9c1dd4b"

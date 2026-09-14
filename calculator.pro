@@ -30,9 +30,10 @@ msvc:release {
     CRT_DEPLOY_DIR = $$replace(OUT_PWD, /, \\)\\release
     CRT_SOURCE_DIR = $$replace(PWD, /, \\)\\resources\\runtime\\win-x64
     exists($$CRT_SOURCE_DIR/MSVCP140.dll) {
-        QMAKE_POST_LINK += $$quote(copy /Y "$$CRT_SOURCE_DIR\\MSVCP140.dll" "$$CRT_DEPLOY_DIR\\MSVCP140.dll") && \
-                            $$quote(copy /Y "$$CRT_SOURCE_DIR\\VCRUNTIME140.dll" "$$CRT_DEPLOY_DIR\\VCRUNTIME140.dll") && \
-                            $$quote(copy /Y "$$CRT_SOURCE_DIR\\VCRUNTIME140_1.dll" "$$CRT_DEPLOY_DIR\\VCRUNTIME140_1.dll")
+        QMAKE_POST_LINK += $$quote(copy /Y "$$CRT_SOURCE_DIR\\MSVCP140.dll" "$$CRT_DEPLOY_DIR\\MSVCP140.dll") $$quote(&&) \
+                            $$quote(copy /Y "$$CRT_SOURCE_DIR\\VCRUNTIME140.dll" "$$CRT_DEPLOY_DIR\\VCRUNTIME140.dll") $$quote(&&) \
+                            $$quote(copy /Y "$$CRT_SOURCE_DIR\\VCRUNTIME140_1.dll" "$$CRT_DEPLOY_DIR\\VCRUNTIME140_1.dll") $$quote(&&) \
+                            $$quote(copy /Y "$$CRT_SOURCE_DIR\\zlib.dll" "$$CRT_DEPLOY_DIR\\zlib.dll")
     } else {
         error(MSVC CRT runtime files are missing from resources/runtime/win-x64)
     }
