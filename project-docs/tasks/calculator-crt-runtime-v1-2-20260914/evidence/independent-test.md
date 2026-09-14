@@ -5,6 +5,15 @@
 - 基线提交：`0192c57ed9626259e317b9f064a14f023cad026f`
 - 测试时间：2026-09-14 15:45（+08:00）
 
+## 冻结提交复测
+
+- 独立测试工作树：`E:/qt/project1-crt-test`
+- 测试提交：`8ffe17c`
+- 全新 Release 构建：PASS（通过），qmake/nmake 生成 `build/independent-app/release/WangChenyangCalculator.exe`，QMAKE_POST_LINK 复制四个运行库 DLL。
+- 全新 Engine 构建与运行：PASS（通过），输出 `All CalculatorEngine tests passed.`
+- 独立载荷：PASS（通过），输出 `build/independent-output/Payload.zip`，SHA-256 `D634A8E52786E5D9E700328AF3898D37950A6875605A840DE88470B189522237`，20 个成员，三枚 CRT 与 `zlib.dll` 均存在。
+- 独立受控启动：PASS（通过），受控 PATH 下持续运行 3 秒后受控终止；测试树 `git status` 干净。
+
 ## 质量门禁
 
 | 门禁 | 结果 | 命令/证据 |

@@ -1,0 +1,49 @@
+handoff_id: "handoff-calculator-crt-runtime-testing-to-audit-20260914"
+handoff_type: "independent_test_to_audit"
+task_id: "calculator-crt-runtime-v1-2-20260914"
+workflow_version: "v1.2"
+source:
+  node: "独立测试"
+  session_id: "session-20260914-calculator-crt-runtime-independent-test"
+  actor: "agent"
+  completed_at: "2026-09-14T16:10:00+08:00"
+  branch: "codex/calculator-crt-runtime-v1-2-20260914"
+  head_commit: "8ffe17c"
+  base_commit: "0192c57ed9626259e317b9f064a14f023cad026f"
+  manifest_hash: "sha256:1d06d634abc9ddc48b34617e23b9b7d8cd6ee701a17cfa037e57ab195bf6f38c"
+  previous_handoff_id: null
+destination:
+  node: "独立审计"
+  required_session_type: "fresh"
+  required_actor: "main-agent-or-authorized-agent"
+  exact_command: "$development-os-v1-2 独立审计 王晨扬的计算器纳入 MSVC x64 CRT 并复测发布包 project-docs/tasks/calculator-crt-runtime-v1-2-20260914/"
+scope:
+  allowed_paths: [".gitignore", "calculator.pro", "resources/runtime/win-x64/", "scripts/release/Package-Release.ps1", "release/Payload.zip", "project-docs/migrations/v1-1-to-v1-2-20260914.yaml", "project-docs/ai-workflow/", "project-docs/tasks/calculator-crt-runtime-v1-2-20260914/"]
+  denied_paths: ["src/", "tests/", "remote"]
+  changed_paths: [".gitignore", "calculator.pro", "resources/runtime/win-x64/", "scripts/release/Package-Release.ps1", "release/Payload.zip", "project-docs/migrations/v1-1-to-v1-2-20260914.yaml", "project-docs/ai-workflow/", "project-docs/tasks/calculator-crt-runtime-v1-2-20260914/"]
+  unchanged_required_paths: ["src/", "tests/"]
+preconditions:
+  required_states: ["Goal: LOCKED", "Task: TESTING"]
+  required_approvals: ["approval-calculator-crt-runtime-20260914"]
+  required_artifacts: ["task-card.md", "goal.md", "design.md", "plan.md", "evidence/independent-test.md"]
+  required_evidence: ["project-docs/tasks/calculator-crt-runtime-v1-2-20260914/evidence/independent-test.md"]
+  blocking_conditions: ["宿主机极简 PATH 缺少 UCRT API-set，已记录为条件环境限制；不得据此宣称全环境 PASS。"]
+source_result:
+  outcome: "CONDITIONAL"
+  summary: "冻结提交的独立 Release/Engine 重建、载荷成员校验和受控启动通过；极简 PATH 受宿主机 UCRT API-set 限制。"
+  implementation_summary: "三枚 CRT DLL 和 zlib.dll 已跟踪，qmake 复制与发布白名单已更新，迁移冻结哈希修正。"
+  test_summary: "独立工作树 E:/qt/project1-crt-test 从 8ffe17c 全新构建并通过 Engine、载荷和受控启动检查。"
+  audit_summary: "尚未执行独立审计。"
+  unresolved_findings: []
+  risks: ["未执行真实系统级 VC Redist 安装；极简 PATH 启动受宿主机 UCRT API-set 环境限制。"]
+verification:
+  commands: ["qmake/nmake Release", "Engine Release tests", "Package-Release.ps1", "ZIP member/hash check", "controlled PATH launch"]
+  exit_codes: [0, 0, 0, 0, 0]
+  evidence_refs: ["project-docs/tasks/calculator-crt-runtime-v1-2-20260914/evidence/independent-test.md"]
+  git_status_before: "clean at 8ffe17c"
+  git_status_after: "clean in independent test worktree"
+  diff_hash: "sha256:pending-current-branch-diff"
+next_action:
+  action: "执行独立审计"
+  stop_condition: "发现未授权路径、冻结提交变化或审计发现阻塞问题。"
+  user_confirmation_required: true
