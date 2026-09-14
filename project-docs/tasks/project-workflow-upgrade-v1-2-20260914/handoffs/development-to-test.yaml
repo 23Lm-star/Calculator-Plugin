@@ -6,11 +6,11 @@ source:
   node: "开发"
   session_id: "session-20260914-workflow-upgrade"
   actor: "agent"
-  completed_at: "2026-09-14T13:47:01+08:00"
+  completed_at: "2026-09-14T14:55:42+08:00"
   branch: "codex/chore/project-workflow-upgrade-v1-2-20260914"
-  head_commit: "68ab54439f8e859779844ef4e6723f24e3545d25"
+  head_commit: "d68030f53ddb171c7a879ba677ee4604e61ea970"
   base_commit: "68ab54439f8e859779844ef4e6723f24e3545d25"
-  manifest_hash: "sha256:1d7e1b59c769281e034e29d9a98b3f4b97784dc2500fa319ec7715b90f272add"
+  manifest_hash: "sha256:b241c521d72e4a0e5ac385169ab18064671dd4cfb2f1d68de95c5d231e2d0afd"
   previous_handoff_id: null
 destination:
   node: "独立测试"
@@ -27,10 +27,10 @@ preconditions:
   required_approvals: ["goal-approval-20260914"]
   required_artifacts: ["task-card.md", "goal.md", "design.md", "plan.md", "开发报告.md"]
   required_evidence: ["evidence/upgrade-validation.md"]
-  blocking_conditions: ["冻结交接提交尚未生成。"]
+  blocking_conditions: []
 source_result:
   outcome: "CONDITIONAL"
-  summary: "v1.2 引导和迁移记录已完成；专用工作树已建立，等待冻结提交。"
+  summary: "v1.2 引导和迁移记录已完成；冻结实现提交 d68030f 已生成，等待独立测试。"
   implementation_summary: "只修改 docs/agent.md 与 project-docs/；未改业务源码、测试、工程或旧流程记录。"
   test_summary: "已完成开发阶段路径、版本和历史哈希验证；未执行独立测试。"
   audit_summary: "未执行独立审计。"
@@ -41,9 +41,9 @@ verification:
   exit_codes: [0]
   evidence_refs: ["project-docs/tasks/project-workflow-upgrade-v1-2-20260914/evidence/upgrade-validation.md"]
   git_status_before: "独立工作树从 68ab544 创建，工作树干净。"
-  git_status_after: "仅 docs/agent.md 与 project-docs/ 为待提交变更。"
-  diff_hash: null
+  git_status_after: "冻结实现提交 d68030f 后工作树干净；交接元数据另行提交且不改变运行时源码。"
+  diff_hash: "sha256:5b52eb5b1268e016d4c206f3e6eb6b5e290c4edf94ac975faf2aeffef82ec1be"
 next_action:
-  action: "生成冻结提交后，用最终交接记录进入独立测试。"
+  action: "在新鲜会话中使用冻结实现提交 d68030f 执行独立测试。"
   stop_condition: "出现允许路径外修改或 Git 头提交变化。"
   user_confirmation_required: false

@@ -39,9 +39,9 @@ maintenance_event_ref: "project-docs/migrations/v1-1-to-v1-2-20260914.yaml"
 session:
   current_session_id: "session-20260914-workflow-upgrade"
   source_session_id: null
-  handoff_commit: null
-  handoff_timestamp: null
-  handoff_manifest_hash: null
+  handoff_commit: "d68030f53ddb171c7a879ba677ee4604e61ea970"
+  handoff_timestamp: "2026-09-14T14:55:42+08:00"
+  handoff_manifest_hash: "sha256:ad9164b9ac3c5902954ad985c338650562a5ef814107a5babd8947db093019e8"
 test_evidence_ref: null
 audit_evidence_ref: null
 regression_inventory_ref: "project-docs/regression/功能回归清单.yaml"
