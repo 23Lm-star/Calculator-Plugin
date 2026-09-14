@@ -1,0 +1,49 @@
+handoff_id: "handoff-workflow-upgrade-repair-to-test-f005-cleanup-80bdb57-20260914"
+handoff_type: "repair_to_independent_test"
+task_id: "project-workflow-upgrade-v1-2-20260914"
+workflow_version: "v1.2"
+source:
+  node: "修复"
+  session_id: "session-20260914-f005-process-cleanup-freeze"
+  actor: "agent"
+  completed_at: "2026-09-14T22:35:00+08:00"
+  branch: "codex/project-workflow-upgrade-v1-2-freeze-20260914"
+  head_commit: "80bdb5750cfb869a13a91339dc10eb69520dcd8f"
+  base_commit: "43a17e84682e03949c3472903a13ea5aa18f1738"
+  manifest_hash: "sha256:3ABF9B31A1B24EACFAB08973E3469E13D64102E90A47044051648B6B508B98E4"
+  previous_handoff_id: "handoff-workflow-upgrade-development-to-test-f005-crt-76537ad-20260914"
+destination:
+  node: "独立测试"
+  required_session_type: "fresh"
+  required_actor: "main-agent-or-authorized-agent"
+  exact_command: "$development-os-v1-2 独立测试 项目流程升级到 Development OS v1.2 project-docs/tasks/project-workflow-upgrade-v1-2-20260914/"
+scope:
+  allowed_paths: [".gitignore", "docs/agent.md", "project-docs/", "resources/runtime/win-x64/", "scripts/release/Package-Release.ps1", "project-tools/test-scripts/Test-PackageReleaseArchivePath.ps1", "project-tools/test-scripts/Test-F005ReleasePackage.ps1", "build/", "artifacts/"]
+  denied_paths: ["src/", "tests/", "calculator.pro", "docs/ai-workflow/", "remote", "main"]
+  changed_paths: ["project-tools/test-scripts/Test-F005ReleasePackage.ps1", "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/"]
+  unchanged_required_paths: ["src/", "tests/", "calculator.pro", "docs/ai-workflow/"]
+preconditions:
+  required_states: ["Goal: LOCKED", "Task: ACTIVE"]
+  required_approvals: ["approval-f005-process-cleanup-20260914"]
+  required_artifacts: ["task-card.md", "goal.md", "design.md", "plan.md", "修复报告-20260914.md"]
+  required_evidence: ["evidence/test/f005-release-package-process-cleanup-20260914.log", "evidence/audit/human-audit-20260914.md"]
+  blocking_conditions: []
+source_result:
+  outcome: "PASS"
+  summary: "F-005 进程退出等待、对象释放和临时目录清理修复已冻结到候选提交。"
+  implementation_summary: "新增 WaitForExit(10000)、finally 兜底清理、Process.Dispose() 和临时目录 10 次删除重试。"
+  test_summary: "F-005 发布包、ZIP 路径回归、Engine 全量测试和临时目录零残留证据已存在；需在本冻结提交重新验证。"
+  audit_summary: "前次人工审计因工作区未冻结而阻塞；本交接已提供可归因冻结提交。"
+  unresolved_findings: []
+  risks: ["必须使用本提交 80bdb57 在新鲜隔离环境重新执行全部必需门禁。"]
+verification:
+  commands: ["git diff --check 43a17e8..80bdb57", "git diff --name-only 43a17e8..80bdb57 -- src tests calculator.pro docs/ai-workflow", "Get-FileHash -Algorithm SHA256 project-docs/tasks/project-workflow-upgrade-v1-2-20260914/manifest.yaml"]
+  exit_codes: [0, 0, 0]
+  evidence_refs: ["project-docs/tasks/project-workflow-upgrade-v1-2-20260914/evidence/test/f005-release-package-process-cleanup-20260914.log", "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/evidence/audit/human-audit-20260914.md"]
+  git_status_before: "隔离工作树基于 43a17e8，未携带原工作区禁止路径改动。"
+  git_status_after: "80bdb57 提交仅包含批准路径；禁止路径差异为空。"
+  diff_hash: "sha256:E1B9B2ECA154D3FDB2C988474635591AC85C9BEF28FCA063A23BEFE3B39B8C97"
+next_action:
+  action: "执行独立测试"
+  stop_condition: "测试对象不是 80bdb57、清单哈希不匹配、发现禁止路径变更或任一必需门禁失败。"
+  user_confirmation_required: true
