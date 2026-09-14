@@ -1,0 +1,19 @@
+warning: in the working copy of 'project-docs/ai-workflow/任务总览.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'project-docs/ai-workflow/项目时间流.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'project-docs/tasks/project-workflow-upgrade-v1-2-20260914/approval-events.ndjson', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'project-docs/tasks/project-workflow-upgrade-v1-2-20260914/finding-events.ndjson', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'project-docs/tasks/project-workflow-upgrade-v1-2-20260914/goal.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'project-docs/tasks/project-workflow-upgrade-v1-2-20260914/manifest.yaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'project-docs/tasks/project-workflow-upgrade-v1-2-20260914/next-session-prompt.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'project-docs/tasks/project-workflow-upgrade-v1-2-20260914/plan.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'project-docs/tasks/project-workflow-upgrade-v1-2-20260914/progress.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'project-docs/tasks/project-workflow-upgrade-v1-2-20260914/state-events.ndjson', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'project-docs/tasks/project-workflow-upgrade-v1-2-20260914/task-card.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/release/Package-Release.ps1', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/ai-workflow/任务总览.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/ai-workflow/项目时间流.md', LF will be replaced by CRLF the next time Git touches it
+FINAL_EVIDENCE_CHECK: PASS
+PAYLOAD_MANIFEST_FILE_COUNT: 19
+FORBIDDEN_SOURCE_PATHS: NONE
+LEGACY_DOC_CHANGES: 2 PREEXISTING USER CHANGES, UNTOUCHED
+TASK_MANIFEST_STATUS: ACTIVE

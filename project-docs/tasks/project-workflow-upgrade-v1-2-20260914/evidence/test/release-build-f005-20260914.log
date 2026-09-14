@@ -1,0 +1,74 @@
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.14.20
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x64'
+
+Microsoft (R) ����ά��ʵ�ù��� 14.44.35220.0 ��
+��Ȩ���� (C) Microsoft Corporation��  ��������Ȩ����
+
+	"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64\nmake.exe" -f Makefile.Release clean
+
+Microsoft (R) ����ά��ʵ�ù��� 14.44.35220.0 ��
+��Ȩ���� (C) Microsoft Corporation��  ��������Ȩ����
+
+	del release\qrc_resources.cpp
+	del release\moc_predefs.h
+	del release\moc_CalculatorUI.cpp release\moc_CalculatorController.cpp
+	del release\main.obj release\ConfigManager.obj release\CalculatorEngine.obj release\CalculatorUI.obj release\CalculatorController.obj release\qrc_resources.obj release\moc_CalculatorUI.obj release\moc_CalculatorController.obj
+	del release\WangChenyangCalculator.exp
+Could Not Find E:\qt\project1\build\v1.1-app\release\WangChenyangCalculator.exp
+	del release\WangChenyangCalculator_resource.res
+	"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64\nmake.exe" -f Makefile.Debug clean
+
+Microsoft (R) ����ά��ʵ�ù��� 14.44.35220.0 ��
+��Ȩ���� (C) Microsoft Corporation��  ��������Ȩ����
+
+	del debug\qrc_resources.cpp
+Could Not Find E:\qt\project1\build\v1.1-app\debug\qrc_resources.cpp
+	del debug\moc_predefs.h
+Could Not Find E:\qt\project1\build\v1.1-app\debug\moc_predefs.h
+	del debug\moc_CalculatorUI.cpp debug\moc_CalculatorController.cpp
+Could Not Find E:\qt\project1\build\v1.1-app\debug\moc_CalculatorUI.cpp
+	del debug\main.obj debug\ConfigManager.obj debug\CalculatorEngine.obj debug\CalculatorUI.obj debug\CalculatorController.obj debug\qrc_resources.obj debug\moc_CalculatorUI.obj debug\moc_CalculatorController.obj
+Could Not Find E:\qt\project1\build\v1.1-app\debug\main.obj
+	del debug\WangChenyangCalculator.exp debug\WangChenyangCalculator.vc.pdb debug\WangChenyangCalculator.ilk debug\WangChenyangCalculator.idb
+Could Not Find E:\qt\project1\build\v1.1-app\debug\WangChenyangCalculator.exp
+	del debug\WangChenyangCalculator_resource.res
+Could Not Find E:\qt\project1\build\v1.1-app\debug\WangChenyangCalculator_resource.res
+	del WangChenyangCalculator.exp
+Could Not Find E:\qt\project1\build\v1.1-app\WangChenyangCalculator.exp
+
+Microsoft (R) ����ά��ʵ�ù��� 14.44.35220.0 ��
+��Ȩ���� (C) Microsoft Corporation��  ��������Ȩ����
+
+	"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64\nmake.exe" -f Makefile.Release
+
+Microsoft (R) ����ά��ʵ�ù��� 14.44.35220.0 ��
+��Ȩ���� (C) Microsoft Corporation��  ��������Ȩ����
+
+	C:\ProgramData\Anaconda31\Library\bin\rcc.exe -name resources ..\..\resources\resources.qrc -o release\qrc_resources.cpp
+	cl -BxC:\ProgramData\Anaconda31\Library\bin\qmake.exe -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding /utf-8 -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E C:\ProgramData\Anaconda31\Library\mkspecs\features\data\dummy.cpp 2>NUL >release\moc_predefs.h
+	C:\ProgramData\Anaconda31\Library\bin\moc.exe -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG --compiler-flavor=msvc --include release/moc_predefs.h -IC:/ProgramData/Anaconda31/Library/mkspecs/win32-msvc -IE:/qt/project1 -IE:/qt/project1/src -IC:/ProgramData/Anaconda31/Library/include/qt -IC:/ProgramData/Anaconda31/Library/include/qt/QtWidgets -IC:/ProgramData/Anaconda31/Library/include/qt/QtGui -IC:/ProgramData/Anaconda31/Library/include/qt/QtANGLE -IC:/ProgramData/Anaconda31/Library/include/qt/QtCore -I. -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\cppwinrt" ..\..\src\view\CalculatorUI.h -o release\moc_CalculatorUI.cpp
+	C:\ProgramData\Anaconda31\Library\bin\moc.exe -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG --compiler-flavor=msvc --include release/moc_predefs.h -IC:/ProgramData/Anaconda31/Library/mkspecs/win32-msvc -IE:/qt/project1 -IE:/qt/project1/src -IC:/ProgramData/Anaconda31/Library/include/qt -IC:/ProgramData/Anaconda31/Library/include/qt/QtWidgets -IC:/ProgramData/Anaconda31/Library/include/qt/QtGui -IC:/ProgramData/Anaconda31/Library/include/qt/QtANGLE -IC:/ProgramData/Anaconda31/Library/include/qt/QtCore -I. -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\cppwinrt" ..\..\src\controller\CalculatorController.h -o release\moc_CalculatorController.cpp
+	rc /NOLOGO -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG -fo release\WangChenyangCalculator_resource.res WangChenyangCalculator_resource.rc
+	cl -c -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding /utf-8 -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -EHsc -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG -I..\..\..\project1 -I. -I..\..\src -IC:\ProgramData\Anaconda31\Library\include\qt -IC:\ProgramData\Anaconda31\Library\include\qt\QtWidgets -IC:\ProgramData\Anaconda31\Library\include\qt\QtGui -IC:\ProgramData\Anaconda31\Library\include\qt\QtANGLE -IC:\ProgramData\Anaconda31\Library\include\qt\QtCore -Irelease -IC:\ProgramData\Anaconda31\Library\mkspecs\win32-msvc -Forelease\ @C:\Users\������\AppData\Local\Temp\nm33C9.tmp
+main.cpp
+	cl -c -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding /utf-8 -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -EHsc -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG -I..\..\..\project1 -I. -I..\..\src -IC:\ProgramData\Anaconda31\Library\include\qt -IC:\ProgramData\Anaconda31\Library\include\qt\QtWidgets -IC:\ProgramData\Anaconda31\Library\include\qt\QtGui -IC:\ProgramData\Anaconda31\Library\include\qt\QtANGLE -IC:\ProgramData\Anaconda31\Library\include\qt\QtCore -Irelease -IC:\ProgramData\Anaconda31\Library\mkspecs\win32-msvc -Forelease\ @C:\Users\������\AppData\Local\Temp\nm365A.tmp
+ConfigManager.cpp
+	cl -c -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding /utf-8 -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -EHsc -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG -I..\..\..\project1 -I. -I..\..\src -IC:\ProgramData\Anaconda31\Library\include\qt -IC:\ProgramData\Anaconda31\Library\include\qt\QtWidgets -IC:\ProgramData\Anaconda31\Library\include\qt\QtGui -IC:\ProgramData\Anaconda31\Library\include\qt\QtANGLE -IC:\ProgramData\Anaconda31\Library\include\qt\QtCore -Irelease -IC:\ProgramData\Anaconda31\Library\mkspecs\win32-msvc -Forelease\ @C:\Users\������\AppData\Local\Temp\nm388E.tmp
+CalculatorEngine.cpp
+	cl -c -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding /utf-8 -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -EHsc -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG -I..\..\..\project1 -I. -I..\..\src -IC:\ProgramData\Anaconda31\Library\include\qt -IC:\ProgramData\Anaconda31\Library\include\qt\QtWidgets -IC:\ProgramData\Anaconda31\Library\include\qt\QtGui -IC:\ProgramData\Anaconda31\Library\include\qt\QtANGLE -IC:\ProgramData\Anaconda31\Library\include\qt\QtCore -Irelease -IC:\ProgramData\Anaconda31\Library\mkspecs\win32-msvc -Forelease\ @C:\Users\������\AppData\Local\Temp\nm39F6.tmp
+CalculatorUI.cpp
+	cl -c -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding /utf-8 -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -EHsc -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG -I..\..\..\project1 -I. -I..\..\src -IC:\ProgramData\Anaconda31\Library\include\qt -IC:\ProgramData\Anaconda31\Library\include\qt\QtWidgets -IC:\ProgramData\Anaconda31\Library\include\qt\QtGui -IC:\ProgramData\Anaconda31\Library\include\qt\QtANGLE -IC:\ProgramData\Anaconda31\Library\include\qt\QtCore -Irelease -IC:\ProgramData\Anaconda31\Library\mkspecs\win32-msvc -Forelease\ @C:\Users\������\AppData\Local\Temp\nm3D23.tmp
+CalculatorController.cpp
+	cl -c -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding /utf-8 -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -EHsc -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG -I..\..\..\project1 -I. -I..\..\src -IC:\ProgramData\Anaconda31\Library\include\qt -IC:\ProgramData\Anaconda31\Library\include\qt\QtWidgets -IC:\ProgramData\Anaconda31\Library\include\qt\QtGui -IC:\ProgramData\Anaconda31\Library\include\qt\QtANGLE -IC:\ProgramData\Anaconda31\Library\include\qt\QtCore -Irelease -IC:\ProgramData\Anaconda31\Library\mkspecs\win32-msvc -Forelease\ @C:\Users\������\AppData\Local\Temp\nm3F95.tmp
+qrc_resources.cpp
+moc_CalculatorUI.cpp
+moc_CalculatorController.cpp
+正在生成代码...
+	link /NOLOGO /DYNAMICBASE /NXCOMPAT /INCREMENTAL:NO /SUBSYSTEM:WINDOWS "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" /MANIFEST:embed /OUT:release\WangChenyangCalculator.exe @C:\Users\������\AppData\Local\Temp\nm438E.tmp
+	copy /Y E:\qt\project1\resources\runtime\win-x64\MSVCP140.dll E:\qt\project1\build\v1.1-app\release\MSVCP140.dll && copy /Y E:\qt\project1\resources\runtime\win-x64\VCRUNTIME140.dll E:\qt\project1\build\v1.1-app\release\VCRUNTIME140.dll && copy /Y E:\qt\project1\resources\runtime\win-x64\VCRUNTIME140_1.dll E:\qt\project1\build\v1.1-app\release\VCRUNTIME140_1.dll
+        1 file(s) copied.
+        1 file(s) copied.
+        1 file(s) copied.

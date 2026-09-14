@@ -62,7 +62,7 @@ function Assert-SafeArchive([string]$ArchivePath, [string[]]$AllowedEntries) {
     try {
         $unsafeEntries = @()
         foreach ($entry in $archive.Entries) {
-            $entryName = $entry.FullName.Replace('/', '\\').TrimEnd('\\')
+            $entryName = $entry.FullName.Replace('/', '\').TrimEnd('\')
             if ((Test-UnsafePath $entry.FullName) -or $entryName -notin $AllowedEntries) {
                 $unsafeEntries += $entry.FullName
             }
