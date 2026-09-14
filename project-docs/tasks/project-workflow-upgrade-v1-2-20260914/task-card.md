@@ -2,7 +2,7 @@
 
 - Internal ID（内部 ID）：`project-workflow-upgrade-v1-2-20260914`
 - Workflow version（流程版本）：`v1.2`
-- Status（状态）：`BLOCKED`（本地候选回归阻塞）
+- Status（状态）：`ACTIVE`（F-005 独立复测通过，待独立审计）
 - Business objective（业务目标）：使本项目具备 v1.2 规范入口、项目清单、质量门禁、完整回归清单和可回滚迁移记录，并验证 Windows Release（发布版）运行库载荷。
 - Users or affected actors（用户/受影响角色）：项目维护者、开发者、测试者和审计者。
 - Priority（优先级）：高

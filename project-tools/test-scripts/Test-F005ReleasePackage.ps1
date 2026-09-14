@@ -16,6 +16,7 @@ $extractPath = Join-Path $testRoot 'isolated'
 $version = '1.1.0-f005.20260914'
 $packageScript = Join-Path $projectRoot 'scripts\release\Package-Release.ps1'
 $readmePath = Join-Path $projectRoot 'release\README.md'
+$process = $null
 $expectedHashes = @{
     'MSVCP140.dll' = '0F885B509A685D2BBFA652FED26B5FB31D88FBDAB0A978C641D1C7B8AA460AA9'
     'VCRUNTIME140.dll' = 'D5E4D9A3E835FA679450145D6A7D94E36573A509317111904D9B3712C30D9066'
@@ -56,11 +57,35 @@ try {
         throw "Isolated package executable exited early with code $($process.ExitCode)."
     }
     Stop-Process -Id $process.Id -Force
+    if (-not $process.WaitForExit(10000)) {
+        throw "Isolated package executable did not exit after termination."
+    }
     Write-Output 'ISOLATED_PACKAGE_STARTUP: PASS'
     Write-Output 'F005_RELEASE_PACKAGE_REGRESSION: PASS'
 }
 finally {
+    if ($null -ne $process) {
+        if (-not $process.HasExited) {
+            Stop-Process -Id $process.Id -Force -ErrorAction SilentlyContinue
+            $process.WaitForExit(10000)
+        }
+        $process.Dispose()
+    }
     if (Test-Path -LiteralPath $testRoot) {
-        Remove-Item -LiteralPath $testRoot -Recurse -Force
+        $cleanupComplete = $false
+        for ($attempt = 1; $attempt -le 10 -and -not $cleanupComplete; $attempt++) {
+            try {
+                Remove-Item -LiteralPath $testRoot -Recurse -Force -ErrorAction Stop
+                $cleanupComplete = $true
+            }
+            catch {
+                if ($attempt -lt 10) {
+                    Start-Sleep -Milliseconds 500
+                }
+                else {
+                    throw
+                }
+            }
+        }
     }
 }

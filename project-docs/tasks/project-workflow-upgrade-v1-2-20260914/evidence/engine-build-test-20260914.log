@@ -1,0 +1,22 @@
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.14.20
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x64'
+
+Microsoft (R) ����ά��ʵ�ù��� 14.44.35220.0 ��
+��Ȩ���� (C) Microsoft Corporation��  ��������Ȩ����
+
+	del release\main.obj release\CalculatorEngine.obj
+	del release\engine_tests.exp
+Could Not Find E:\qt\project1\tests\engine\release\engine_tests.exp
+
+Microsoft (R) ����ά��ʵ�ù��� 14.44.35220.0 ��
+��Ȩ���� (C) Microsoft Corporation��  ��������Ȩ����
+
+	cl -c -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding /utf-8 -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -EHsc -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DNDEBUG -I. -I..\..\src -IC:\ProgramData\Anaconda31\Library\mkspecs\win32-msvc -Forelease\ @C:\Users\������\AppData\Local\Temp\nmB066.tmp
+main.cpp
+	cl -c -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding /utf-8 -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -EHsc -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DNDEBUG -I. -I..\..\src -IC:\ProgramData\Anaconda31\Library\mkspecs\win32-msvc -Forelease\ @C:\Users\������\AppData\Local\Temp\nmB384.tmp
+CalculatorEngine.cpp
+	link /NOLOGO /DYNAMICBASE /NXCOMPAT /INCREMENTAL:NO /SUBSYSTEM:CONSOLE "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" /MANIFEST:embed /OUT:release\engine_tests.exe @C:\Users\������\AppData\Local\Temp\nmB50C.tmp
+All CalculatorEngine tests passed.

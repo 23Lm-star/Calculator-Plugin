@@ -37,13 +37,13 @@ active_finding_event_chain_ref: "project-docs/tasks/project-workflow-upgrade-v1-
 repaired_from_chain_hash: null
 maintenance_event_ref: "project-docs/migrations/v1-1-to-v1-2-20260914.yaml"
 session:
-  current_session_id: "session-20260914-crt-tracking-handoff"
-  source_session_id: "session-20260914-package-whitelist-repair"
+  current_session_id: "session-20260914-independent-test-f005-process-cleanup"
+  source_session_id: "session-20260914-crt-tracking-handoff"
   handoff_commit: "76537ad041e0723554d34150e28f1a546f8c8a81"
   handoff_timestamp: "2026-09-14T21:05:37+08:00"
   handoff_manifest_hash: "sha256:243988fa76df8723554a6a991fe12eaa942b2cac505bb773bf1ec7612dd90855"
-  test_evidence_ref: "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/修复报告-20260914.md"
-audit_evidence_ref: null
+  test_evidence_ref: "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/独立测试报告-F005进程清理-20260914.md"
+audit_evidence_ref: "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/独立审计报告-F005进程清理-20260914.md"
 regression_inventory_ref: "project-docs/regression/功能回归清单.yaml"
 handoff_refs:
   - "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/handoffs/development-to-test-pending-commit.yaml"
