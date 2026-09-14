@@ -37,16 +37,17 @@ active_finding_event_chain_ref: "project-docs/tasks/project-workflow-upgrade-v1-
 repaired_from_chain_hash: null
 maintenance_event_ref: "project-docs/migrations/v1-1-to-v1-2-20260914.yaml"
 session:
-  current_session_id: "session-20260914-package-whitelist-repair"
-  source_session_id: "session-20260914-workflow-upgrade"
-  handoff_commit: null
-  handoff_timestamp: null
-  handoff_manifest_hash: null
+  current_session_id: "session-20260914-f005-handoff"
+  source_session_id: "session-20260914-package-whitelist-repair"
+  handoff_commit: "7a1ef9d013189cac00189df9073147a3f490c45d"
+  handoff_timestamp: "2026-09-14T20:52:06+08:00"
+  handoff_manifest_hash: "sha256:93153e918e7d6bd7377a656ea91550141df6b1d7ab624d242091b33de3d4c9b2"
   test_evidence_ref: "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/修复报告-20260914.md"
 audit_evidence_ref: null
 regression_inventory_ref: "project-docs/regression/功能回归清单.yaml"
 handoff_refs:
   - "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/handoffs/development-to-test-pending-commit.yaml"
+  - "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/handoffs/development-to-test-f005-7a1ef9d.yaml"
 integration_candidate:
   base_integration_commit: null
   task_commit: null

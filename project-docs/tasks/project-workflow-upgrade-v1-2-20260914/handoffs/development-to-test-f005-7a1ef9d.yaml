@@ -1,0 +1,49 @@
+handoff_id: "handoff-workflow-upgrade-development-to-test-f005-7a1ef9d-20260914"
+handoff_type: "development_to_test"
+task_id: "project-workflow-upgrade-v1-2-20260914"
+workflow_version: "v1.2"
+source:
+  node: "开发"
+  session_id: "session-20260914-package-whitelist-repair"
+  actor: "agent"
+  completed_at: "2026-09-14T20:52:06+08:00"
+  branch: "codex/release-delivery-v1.0"
+  head_commit: "7a1ef9d013189cac00189df9073147a3f490c45d"
+  base_commit: "68ab54439f8e859779844ef4e6723f24e3545d25"
+  manifest_hash: "sha256:93153e918e7d6bd7377a656ea91550141df6b1d7ab624d242091b33de3d4c9b2"
+  previous_handoff_id: "handoff-workflow-upgrade-development-to-test-pending-commit-20260914"
+destination:
+  node: "独立测试"
+  required_session_type: "fresh"
+  required_actor: "main-agent-or-authorized-agent"
+  exact_command: "$development-os-v1-2 独立测试 项目流程升级到 Development OS v1.2 project-docs/tasks/project-workflow-upgrade-v1-2-20260914/"
+scope:
+  allowed_paths: ["docs/agent.md", "project-docs/", "resources/runtime/win-x64/", "scripts/release/Package-Release.ps1", "project-tools/test-scripts/Test-PackageReleaseArchivePath.ps1", "project-tools/test-scripts/Test-F005ReleasePackage.ps1", "build/", "artifacts/"]
+  denied_paths: ["src/", "tests/", "calculator.pro", "docs/ai-workflow/", "remote", "main"]
+  changed_paths: ["project-docs/ai-workflow/任务总览.md", "project-docs/ai-workflow/项目时间流.md", "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/", "scripts/release/Package-Release.ps1", "project-tools/test-scripts/Test-PackageReleaseArchivePath.ps1", "project-tools/test-scripts/Test-F005ReleasePackage.ps1"]
+  unchanged_required_paths: ["src/", "tests/", "calculator.pro", "docs/ai-workflow/"]
+preconditions:
+  required_states: ["Goal: LOCKED", "Task: ACTIVE"]
+  required_approvals: ["goal-approval-20260914", "approval-package-whitelist-repair-20260914"]
+  required_artifacts: ["task-card.md", "goal.md", "design.md", "plan.md", "修复报告-20260914.md"]
+  required_evidence: ["evidence/test/package-release-archive-path-20260914.log", "evidence/test/f005-release-package-20260914.log"]
+  blocking_conditions: []
+source_result:
+  outcome: "PASS"
+  summary: "F-005 发布包白名单路径分隔符修复已冻结，未混入工作区既有改动。"
+  implementation_summary: "将 ZIP 条目规范化为单反斜杠以匹配发布包白名单，新增路径分隔符和隔离发布包回归脚本。"
+  test_summary: "开发阶段的 ZIP 路径、Release 构建、Qt 部署、隔离解压、CRT SHA-256 和 EXE 启动验证通过。"
+  audit_summary: "未执行独立审计。"
+  unresolved_findings: []
+  risks: ["独立测试必须在冻结提交的隔离工作树中重跑必需质量门禁。"]
+verification:
+  commands: ["powershell -File project-tools/test-scripts/Test-PackageReleaseArchivePath.ps1", "powershell -File project-tools/test-scripts/Test-F005ReleasePackage.ps1"]
+  exit_codes: [0, 0]
+  evidence_refs: ["project-docs/tasks/project-workflow-upgrade-v1-2-20260914/修复报告-20260914.md", "project-docs/tasks/project-workflow-upgrade-v1-2-20260914/evidence/test/f005-release-package-20260914.log"]
+  git_status_before: "存在用户既有未提交改动，未暂存、未覆盖。"
+  git_status_after: "冻结提交仅含 F-005 允许路径；用户既有改动仍保留在工作区。"
+  diff_hash: null
+next_action:
+  action: "执行独立测试"
+  stop_condition: "发现冻结提交、任务清单哈希或允许路径校验不一致。"
+  user_confirmation_required: true
