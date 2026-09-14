@@ -1,0 +1,62 @@
+schema_version: "1.0"
+features:
+  - feature_id: "F-001"
+    name: "中缀表达式计算"
+    entry_point: "Qt Widgets 主窗口计算器输入区"
+    required: true
+    risk: "high"
+    preconditions: ["应用可启动", "主窗口可见"]
+    test_data: ["1+2*3", "(1+2)*3", "-2.5+4"]
+    happy_path: ["输入表达式", "点击等号", "显示正确结果", "结果可继续参与计算"]
+    failure_paths: ["非法字符提示", "格式错误提示", "括号不匹配提示", "除零提示"]
+    cross_feature_dependencies: ["F-002"]
+    verification_mode: "manual"
+    evidence_ref: null
+  - feature_id: "F-002"
+    name: "编辑与清零"
+    entry_point: "主窗口 CE 与退格按钮"
+    required: true
+    risk: "medium"
+    preconditions: ["应用可启动"]
+    test_data: ["12+34", "CE", "<- "]
+    happy_path: ["输入多字符表达式", "点击退格", "确认末字符删除", "点击 CE", "确认输入和结果清空"]
+    failure_paths: ["空输入退格不崩溃", "重复清零保持空状态"]
+    cross_feature_dependencies: ["F-001"]
+    verification_mode: "manual"
+    evidence_ref: null
+  - feature_id: "F-003"
+    name: "用户名配置持久化"
+    entry_point: "设置面板用户名输入"
+    required: true
+    risk: "medium"
+    preconditions: ["应用可启动", "可写应用目录"]
+    test_data: ["CodexTestUser"]
+    happy_path: ["输入用户名", "保存配置", "退出应用", "重新启动", "确认用户名和窗口标题恢复"]
+    failure_paths: ["空用户名使用默认值", "配置文件不可写时给出可理解反馈"]
+    cross_feature_dependencies: []
+    verification_mode: "manual"
+    evidence_ref: null
+  - feature_id: "F-004"
+    name: "主题与自定义背景"
+    entry_point: "设置面板主题选择和本地图片选择"
+    required: true
+    risk: "medium"
+    preconditions: ["应用可启动", "存在可读取本地图片"]
+    test_data: ["Ocean", "Forest", "Sunset", "本地 PNG 图片"]
+    happy_path: ["选择预设主题", "确认界面样式更新", "选择本地图片", "确认背景更新", "重启后检查持久化行为"]
+    failure_paths: ["取消图片选择不改变当前背景", "选择不可读图片时保持稳定"]
+    cross_feature_dependencies: ["F-003"]
+    verification_mode: "manual"
+    evidence_ref: null
+  - feature_id: "F-005"
+    name: "Windows 发布包启动"
+    entry_point: "release/Payload.zip 或 scripts/release/Install-Calculator.cmd"
+    required: true
+    risk: "high"
+    preconditions: ["已生成 Release 构建与 Qt/MSVC 运行时载荷"]
+    test_data: ["受控临时目录", "干净克隆目录"]
+    happy_path: ["生成发布载荷", "在隔离目录安装", "启动 EXE", "执行 F-001 至 F-004 的关键路径"]
+    failure_paths: ["载荷缺失时安装器返回明确错误", "缺少运行时 DLL 时阻止误报成功"]
+    cross_feature_dependencies: ["F-001", "F-003", "F-004"]
+    verification_mode: "manual"
+    evidence_ref: null

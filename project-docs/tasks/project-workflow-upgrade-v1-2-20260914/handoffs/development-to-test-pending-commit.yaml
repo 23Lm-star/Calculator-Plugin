@@ -1,0 +1,49 @@
+handoff_id: "handoff-workflow-upgrade-development-to-test-pending-commit-20260914"
+handoff_type: "development_to_test"
+task_id: "project-workflow-upgrade-v1-2-20260914"
+workflow_version: "v1.2"
+source:
+  node: "开发"
+  session_id: "session-20260914-workflow-upgrade"
+  actor: "agent"
+  completed_at: "2026-09-14T13:47:01+08:00"
+  branch: "codex/release-delivery-v1.0"
+  head_commit: "68ab54439f8e859779844ef4e6723f24e3545d25"
+  base_commit: "68ab54439f8e859779844ef4e6723f24e3545d25"
+  manifest_hash: "sha256:2a780f42f9cec9f4aeb3443b11bbce6a2d934a2abfcc552c363bb5c0849025da"
+  previous_handoff_id: null
+destination:
+  node: "独立测试"
+  required_session_type: "fresh"
+  required_actor: "main-agent-or-authorized-agent"
+  exact_command: "$development-os-v1-2 独立测试 项目流程升级到 Development OS v1.2 project-docs/tasks/project-workflow-upgrade-v1-2-20260914/"
+scope:
+  allowed_paths: ["docs/agent.md", "project-docs/"]
+  denied_paths: ["src/", "tests/", "calculator.pro", "docs/ai-workflow/", "remote"]
+  changed_paths: ["docs/agent.md", "project-docs/"]
+  unchanged_required_paths: ["src/", "tests/", "calculator.pro", "docs/ai-workflow/"]
+preconditions:
+  required_states: ["Goal: LOCKED", "Task: ACTIVE"]
+  required_approvals: ["goal-approval-20260914"]
+  required_artifacts: ["task-card.md", "goal.md", "design.md", "plan.md", "开发报告.md"]
+  required_evidence: ["evidence/upgrade-validation.md"]
+  blocking_conditions: ["缺少仅含本任务允许路径的冻结交接提交；当前分支含用户已有未提交改动。"]
+source_result:
+  outcome: "CONDITIONAL"
+  summary: "v1.2 引导和迁移记录已完成；交接因缺少冻结提交而阻塞。"
+  implementation_summary: "只修改 docs/agent.md 与 project-docs/；未改业务源码、测试、工程或旧流程记录。"
+  test_summary: "已完成开发阶段路径、版本和历史哈希验证；未执行独立测试。"
+  audit_summary: "未执行独立审计。"
+  unresolved_findings: []
+  risks: ["在冻结提交前不能产生有效独立测试证据。"]
+verification:
+  commands: ["PowerShell 路径、版本与 SHA-256 验证"]
+  exit_codes: [0]
+  evidence_refs: ["project-docs/tasks/project-workflow-upgrade-v1-2-20260914/evidence/upgrade-validation.md"]
+  git_status_before: "用户已有旧流程未提交改动。"
+  git_status_after: "新增 docs/agent.md 与 project-docs/ 升级改动；用户原有改动保持未覆盖。"
+  diff_hash: null
+next_action:
+  action: "取得专用分支创建或仅暂存允许路径的冻结提交授权，然后执行独立测试。"
+  stop_condition: "冻结提交混入用户既有改动、出现允许路径外修改或 Git 头提交变化。"
+  user_confirmation_required: true

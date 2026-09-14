@@ -1,0 +1,27 @@
+schema_version: "1.0"
+project_id: "wangchenyang-calculator"
+project_name: "王晨扬的计算器"
+workflow_version: "v1.2"
+project_type: "desktop"
+runtime_roots:
+  - "src/"
+  - "resources/"
+  - "calculator.pro"
+test_roots:
+  - "tests/"
+process_docs_root: "project-docs/"
+legacy_process_docs_roots:
+  - "docs/ai-workflow/"
+quality_profile_ref: "project-docs/quality-profile.yaml"
+regression_inventory_ref: "project-docs/regression/功能回归清单.yaml"
+entry_doc: "docs/agent.md"
+technology:
+  framework: "Qt Widgets 5.9.5（Qt Widgets 框架）"
+  build_system: "qmake（构建系统）"
+  language_standard: "C++11（语言标准）"
+  toolchain: "Visual Studio 2022 C++（工具链）"
+baseline:
+  branch: "codex/release-delivery-v1.0"
+  commit: "68ab54439f8e859779844ef4e6723f24e3545d25"
+  captured_at: "2026-09-14T00:00:00+08:00"
+migration_ref: "project-docs/migrations/v1-1-to-v1-2-20260914.yaml"
